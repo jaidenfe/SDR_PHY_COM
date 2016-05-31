@@ -1,0 +1,30 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_INTERFACES Interfaces)
+
+FIND_PATH(
+    INTERFACES_INCLUDE_DIRS
+    NAMES Interfaces/api.h
+    HINTS $ENV{INTERFACES_DIR}/include
+        ${PC_INTERFACES_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    INTERFACES_LIBRARIES
+    NAMES gnuradio-Interfaces
+    HINTS $ENV{INTERFACES_DIR}/lib
+        ${PC_INTERFACES_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+)
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(INTERFACES DEFAULT_MSG INTERFACES_LIBRARIES INTERFACES_INCLUDE_DIRS)
+MARK_AS_ADVANCED(INTERFACES_LIBRARIES INTERFACES_INCLUDE_DIRS)
+
