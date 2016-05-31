@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <block>
-  <name>queue_len_deframer_sink_b</name>
-  <key>Interfaces_queue_len_deframer_sink_b</key>
+  <name>queue_len_framer_source_b</name>
+  <key>Interfaces_queue_len_framer_source_b</key>
   <category>Interfaces</category>
   <import>import Interfaces</import>
-  <make>Interfaces.queue_len_deframer_sink_b($preamble, $rxlog)</make>
-
+  <make>Interfaces.queue_len_framer_source_b($preamble, $txlog)</make>
+  
   <param>
     <name>Preamble</name>
     <key>$preamble</key>
@@ -14,13 +14,13 @@
 
   <param>
     <name>Log</name>
-    <key>$rxlog</key>
+    <key>$txlog</key>
     <type>bool</type>
   </param>
-
-  <sink>
-    <name>in</name>
+  
+  <source>
+    <name>out</name>
     <type>byte</type>
     <vlen>$&gt;)</vlen>
-  </sink>
+  </source>
 </block>

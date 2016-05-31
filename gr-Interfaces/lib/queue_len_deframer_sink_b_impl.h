@@ -38,7 +38,7 @@ namespace gr {
      public:
       queue_len_deframer_sink_b_impl(char preamble, bool rxlog);
       ~queue_len_deframer_sink_b_impl();
-      char * receive() {
+      char * receive();
 
       // Where all the action really happens
       int work(int noutput_items,

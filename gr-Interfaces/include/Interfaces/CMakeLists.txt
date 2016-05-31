@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    queue_len_deframer_sink_b.h DESTINATION include/Interfaces
+    queue_len_deframer_sink_b.h
+    queue_len_framer_source_b.h DESTINATION include/Interfaces
 )
