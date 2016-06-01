@@ -2,7 +2,7 @@
 
 SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses gnuradio as the signal processing engine and is set up to operate in full duplex.
 
-INSTALLATION:
+<h3>Installation:</h3>
 
 In order to install the gr-Interfaces blocks (queue length-based framer source and sink) follow the instructions below:
 
@@ -23,7 +23,7 @@ $ sudo make install
 
 You can now open gnuradio and use the gr-Interfaces blocks under the INTERFACES tab.
 
-UNINSTALLING GR-INTERFACES:
+<h3>Uninstalling:</h3>
 
 To uninstall the blocks change into the gr-Interfaces/build directory
 $ cd PATH/TO/DIR/gr-Interfaces/build
