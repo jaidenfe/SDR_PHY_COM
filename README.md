@@ -1,14 +1,13 @@
 <h1>SDR Physical Layer Interface</h1>
 
-SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses gnuradio as the signal processing engine and is set up to operate in full duplex.
+SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses GNU Radio as the signal processing engine and is set up to operate in full duplex.
 
 <h3>Dependencies</h3>
 The following programs are required to use the SDR Physical Layer Interfaces:
-<li> gnuradio X.X.X <br>
-<li> Python2.7 <br>
-<li> C++11 <br>
+<li> GNU Radio 3.7.9.1 <br>
+<li> Python 2.7 <br>
 
-This library is used to extend the functionality of gnuradio. These blocks were designed for use with other applications that require packet radio functionality. These blocks have been designed using gnuradiox.x.x and require Python2.7.
+This library is used to extend the functionality of GNU Radio. These blocks were designed for use with other applications that require packet radio functionality and were developed using GNU Radio 3.7.9.1 and Python 2.7.
 
 <h3>Installation:</h3>
 
