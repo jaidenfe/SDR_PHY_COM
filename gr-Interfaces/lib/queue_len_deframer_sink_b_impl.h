@@ -23,6 +23,7 @@
 
 #include <Interfaces/queue_len_deframer_sink_b.h>
 #include <queue>
+#include <condition_variable>
 
 namespace gr {
   namespace Interfaces {
@@ -32,6 +33,7 @@ namespace gr {
      private:
       // Private variables to use throughout the queue-framer sink
       std::queue<char *> _phy_i;
+      std::condition_variable _cv;
       char _preamble;
       bool _log;
 
