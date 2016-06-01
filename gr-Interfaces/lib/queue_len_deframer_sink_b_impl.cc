@@ -55,8 +55,7 @@ namespace gr {
 
     char * queue_len_deframer_sink_b_impl::receive() {
 
-      /*TO-DO:
-
+      /*
         This is where we define the receiving functionality for the higher layers 
         and for conversion to Phython using SWIG. Here just access the first element 
         and remove it from the queue. Then return the char pointer (will be a string in python)
