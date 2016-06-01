@@ -22,22 +22,20 @@ Then change into the directory and cmake the parent directory
 <br>```$ cd build```
 <br>```$ cmake ..```
 
-Then make the blocks
+Then make and install the blocks
 <br>```$ make```
-
-If the compilation was successful you can install the blocks using the 'sudo make install' command
 <br>```$ sudo make install```
 
-You can now open gnuradio and use the gr-Interfaces blocks under the INTERFACES tab.
+You can now open gnuradio-companion and use the gr-Interfaces blocks under the <b>INTERFACES</b> tab.
 
 <h3>Uninstalling:</h3>
 
 To uninstall the blocks change into the ```gr-Interfaces/build``` directory
 <br>```$ cd PATH/TO/DIR/gr-Interfaces/build```
 
-then use the 'sudo make uninstall' command
+then uninstall using
 <br>```$ sudo make uninstall```
 
-from here you can remake the gr-Interfaces library by following the installation section from the 'cmake' step above or just delete the entire directory by changing into the directory that contains gr-Interfaces and running the command
+from here you can remake the gr-Interfaces library by following the installation section above or just delete the entire directory by changing into the directory that contains gr-Interfaces and recursively deleting all files
 <br>```$ sudo rm -rf gr-Interfaces```
 
