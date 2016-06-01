@@ -4,9 +4,9 @@ SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR)
 
 <h3>Dependencies</h3>
 The following programs are required to use the SDR Physical Layer Interfaces:<br>
-<ui> gnuradio X.X.X
-<ui> Python2.7
-<ui> C++11
+<li> gnuradio X.X.X <br>
+<li> Python2.7 <br>
+<li> C++11 <br>
 
 This library is used to extend the functionality of gnuradio. These blocks were designed for use with other applications that require packet radio functionality. These blocks have been designed using gnuradiox.x.x and require Python2.7.
 
