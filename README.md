@@ -2,7 +2,7 @@
 >Copyright 2016 University at Buffalo Nanosatellite Laboratory<br>
 >Created By Jaiden Ferraccioli<br>
 >E-mail: jaidenfe@buffalo.edu<br>
->Current Version: V1.0
+>Current Version: V1.0<br>
 
 SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses GNU Radio as the signal processing engine and is set up to operate in full duplex.
 
