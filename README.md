@@ -22,7 +22,7 @@ In order to install the gr-Interfaces blocks (queue length-based framer source a
 Open a terminal window and change into the gr-Interfaces directory.
 
 Make a directory called build
-<br>```bash $ mkdir build```
+<br>```$ mkdir build```
 
 Then change into the directory and cmake the parent directory
 <br>```$ cd build```
