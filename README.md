@@ -1,8 +1,8 @@
-<h1>SDR Physical Layer Interface
+<h1>SDR Physical Layer Interface</h1>
 >Copyright 2016 University at Buffalo Nanosatellite Laboratory<br>
 >Created By Jaiden Ferraccioli<br>
 >E-mail: jaidenfe@buffalo.edu<br>
->Current Version: V1.0</h1>
+>Current Version: V1.0<br>
 
 SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses GNU Radio as the signal processing engine and is set up to operate in full duplex.
 
@@ -22,7 +22,7 @@ In order to install the gr-Interfaces blocks (queue length-based framer source a
 Open a terminal window and change into the gr-Interfaces directory.
 
 Make a directory called build
-<br>```$ mkdir build```
+<br>```bash $ mkdir build```
 
 Then change into the directory and cmake the parent directory
 <br>```$ cd build```
