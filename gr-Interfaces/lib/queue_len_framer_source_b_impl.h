@@ -1,6 +1,7 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2016 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2016 University at Buffalo Nanosatellite Laboratory.
+ * Author: Jaiden Ferraccioli
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

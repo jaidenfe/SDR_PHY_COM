@@ -1,6 +1,7 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2016 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2016 University at Buffalo Nanosatellite Laboratory.
+ * Author: Jaiden Ferraccioli
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -38,28 +39,30 @@ namespace gr {
     /*
      * The private constructor
      */
-    queue_len_deframer_sink_b_impl::queue_len_deframer_sink_b_impl(char preamble, bool rxlog)
+    queue_len_deframer_sink_b_impl::queue_len_deframer_sink_b_impl(char preamble = 'U', bool rxlog = true)
       : gr::sync_block("queue_len_deframer_sink_b",
               gr::io_signature::make(1, 1, sizeof(char)),
               gr::io_signature::make(0, 0, 0))
     {
-      // Initialize the private variables and state whether or not to log received information 
+      // Initialize the private variables and states whether or not to log received information
       _preamble = preamble;
       _log = rxlog;
     }
 
     /*
-     * Our virtual destructor.
+     * The virtual destructor.
      */
     queue_len_deframer_sink_b_impl::~queue_len_deframer_sink_b_impl() {}
 
+    /*
+     * Extends access to the received packet queue to the higher layers and external applications.
+     * Here the first element of the receive queue is returned and removed from the queue.
+     * The packet is returned as a char pointer (SWIG turns this into a string in python)
+     */
     char * queue_len_deframer_sink_b_impl::receive() {
 
-      /*
-        This is where we define the receiving functionality for the higher layers 
-        and for conversion to Phython using SWIG. Here just access the first element 
-        and remove it from the queue. Then return the char pointer (will be a string in python)
-      */
+	// If the queue is empty wait until the conditional variable is notified by the work() function
+	// i.e. that the queue is no longer empty and a packet was received.
 	if(_phy_i.empty()) {
 		_cv.wait();
 	}
@@ -72,10 +75,14 @@ namespace gr {
 	return packet;
     }
 
+    /*
+     * The work function
+     */
     int queue_len_deframer_sink_b_impl::work(int noutput_items,
       gr_vector_const_void_star &input_items,
       gr_vector_void_star &output_items) {
 
+      // The input where bytes are passed to the work function to be processed
       const char *in = (const char *) input_items[0];
 
       // Do <+signal processing+>
