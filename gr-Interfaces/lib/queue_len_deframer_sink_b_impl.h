@@ -24,29 +24,52 @@
 
 #include <Interfaces/queue_len_deframer_sink_b.h>
 #include <queue>
-#include <condition_variable>
+//#include <condition_variable>
+#include <vector>
+#include <bitset>
 
 namespace gr {
   namespace Interfaces {
 
-    class queue_len_deframer_sink_b_impl : public queue_len_deframer_sink_b
-    {
-     private:
-      // Private variables to use throughout the queue-framer sink
-      std::queue<char *> _phy_i;
-      std::condition_variable _cv;
-      char _preamble;
-      bool _log;
+    class queue_len_deframer_sink_b_impl : public queue_len_deframer_sink_b {
+	private:
 
-     public:
-      queue_len_deframer_sink_b_impl(char preamble, bool rxlog);
-      ~queue_len_deframer_sink_b_impl();
-      char * receive();
+		static const int TIMEOUT = 100;
 
-      // Where all the action really happens
-      int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+		// States
+		enum State {
+			POPULATE_BUFFER = 0,
+			DETERMINE_PREAMBLE = 1,
+			DETERMINE_LENGTH = 2,
+			DETERMINE_PACKET = 3
+		} state;
+
+		// Initialize Private Variables
+		std::queue<char *> _phy_i;
+		//std::condition_variable _cv;
+		int _pac_len;
+		char _preamble;
+		bool _log; // Implement the log functionality later on
+
+		// Initialize Buffers
+		std::vector<char> detect;
+		std::vector<char> v_length;
+		std::vector<char> byte_buffer;
+		std::vector<char> packet;
+
+		// Conversion Functions
+		int ubvtoi(std::vector<char> v_len);
+		char pack(std::vector<char> ubyte);
+		bool check_preamble(std::vector<char> ub_in);
+
+	public:
+		queue_len_deframer_sink_b_impl(char preamble, bool rxlog);
+		~queue_len_deframer_sink_b_impl();
+
+		char * receive();
+		int work(int noutput_items,
+			gr_vector_const_void_star &input_items,
+			gr_vector_void_star &output_items);
     };
 
   } // namespace Interfaces
