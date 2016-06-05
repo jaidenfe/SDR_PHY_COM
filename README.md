@@ -1,5 +1,5 @@
 <h1>SDR Physical Layer Interface</h1>
->Copyright 2016 University at Buffalo Nanosatellite Laboratory<br>
+>University at Buffalo Nanosatellite Laboratory 2016<br>
 >Created By Jaiden Ferraccioli<br>
 >E-mail: jaidenfe@buffalo.edu<br>
 >Current Version:    v1.0<br>
