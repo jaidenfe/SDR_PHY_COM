@@ -9,7 +9,7 @@ SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR)
 <h3>Dependencies</h3>
 The following programs are required to use the SDR Physical Layer Interfaces:
 <ul>
-  <li> GNU Radio 3.7.9.1 <br>
+  <li> <a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/Download">GNU Radio 3.7.9.1</a><br>
   <li> Python 2.7 <br>
 </ul>
 
