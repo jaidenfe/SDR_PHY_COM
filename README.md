@@ -4,7 +4,10 @@
 >E-mail: jaidenfe@buffalo.edu<br>
 >Current Version:    v1.0<br>
 
-SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and other layers within an application or system architecture. This program uses GNU Radio as the signal processing engine and is set up to operate in full duplex.
+
+[![Build Status](https://travis-ci.org/jaidenfe/SDR_PHY_COM.svg?branch=master)](https://travis-ci.org/jaidenfe/SDR_PHY_COM)
+
+SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and custom python applications. This program uses GNU Radio as the signal processing engine. These blocks offer full duplex packet radio connectivity in a simple and user-friendly package. 
 
 <h3>Dependencies</h3>
 The following programs are required to use the SDR Physical Layer Interfaces:
