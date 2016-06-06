@@ -2,6 +2,8 @@ language: cpp
 
 sudo: required
 
+dist: trusty
+
 script: cd gr-Interfaces && mkdir build && cd build && cmake .. && make
 
 compiler: g++
