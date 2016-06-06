@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespacegr" kind="namespace">
+    <compoundname>gr</compoundname>
+    <innernamespace refid="namespacegr_1_1Interfaces">gr::Interfaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces/queue_len_deframer_sink_b.h" line="29" column="1"/>
+  </compounddef>
+</doxygen>
