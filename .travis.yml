@@ -1,5 +1,7 @@
 language: cpp
 
+sudo: required
+
 script: cd gr-Interfaces && mkdir build && cd build && cmake .. && make
 
 compiler: g++
