@@ -24,9 +24,10 @@
 
 #include <Interfaces/queue_len_deframer_sink_b.h>
 #include <queue>
-//#include <condition_variable>
+#include <string>
 #include <vector>
 #include <bitset>
+#include <fstream>
 
 namespace gr {
   namespace Interfaces {
@@ -35,6 +36,7 @@ namespace gr {
 	private:
 
 		static const int TIMEOUT = 100;
+		std::ofstream _log_file;
 
 		// States
 		enum State {
@@ -46,13 +48,14 @@ namespace gr {
 
 		// Initialize Private Variables
 		std::queue<char *> _phy_i;
-		//std::condition_variable _cv;
 		int _pac_len;
-		char _preamble;
-		bool _log; // Implement the log functionality later on
+		unsigned char _preamble;
+		bool _log; // TO-DO: Implement log functionality
+		double _id_num;
+		std::time_t _startup;
 
 		// Initialize Buffers
-		std::vector<char> detect;
+		std::queue<unsigned char> detect;
 		std::vector<char> v_length;
 		std::vector<char> byte_buffer;
 		std::vector<char> packet;
@@ -60,7 +63,8 @@ namespace gr {
 		// Conversion Functions
 		int ubvtoi(std::vector<char> v_len);
 		char pack(std::vector<char> ubyte);
-		bool check_preamble(std::vector<char> ub_in);
+		bool check_preamble(std::queue<unsigned char> ub_in);
+		const std::string timestamp();
 
 	public:
 		queue_len_deframer_sink_b_impl(char preamble, bool rxlog);

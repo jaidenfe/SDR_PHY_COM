@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl" kind="class" prot="public">
+    <compoundname>gr::Interfaces::queue_len_deframer_sink_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b" prot="public" virt="non-virtual">gr::Interfaces::queue_len_deframer_sink_b</basecompoundref>
+    <includes refid="queue__len__deframer__sink__b__impl_8h" local="no">queue_len_deframer_sink_b_impl.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432" prot="private" static="no">
+        <name>State</name>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432adf6ba8536d017dbd563cb44b7d9aa326" prot="private">
+          <name>POPULATE_BUFFER</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432a8f5060eeb6cfb6c8bc07ba7f0de7e6c0" prot="private">
+          <name>DETERMINE_PREAMBLE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432ad8b092a06163077e3d74d8789fc4b652" prot="private">
+          <name>DETERMINE_LENGTH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432ab6827c9c127a8f601c3584507aba2ac9" prot="private">
+          <name>DETERMINE_PACKET</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="40" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="40" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae58237e083a25e4c3a23b7dd7a523ab3" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::Interfaces::queue_len_deframer_sink_b_impl::TIMEOUT</definition>
+        <argsstring></argsstring>
+        <name>TIMEOUT</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="37" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a36207ea3cd1a77c182a1256191891b07" prot="private" static="no" mutable="no">
+        <type>enum gr::Interfaces::queue_len_deframer_sink_b_impl::State</type>
+        <definition>enum gr::Interfaces::queue_len_deframer_sink_b_impl::State  gr::Interfaces::queue_len_deframer_sink_b_impl::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a18ebebc23990f63efff442d6349e62e2" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; char * &gt;</type>
+        <definition>std::queue&lt;char *&gt; gr::Interfaces::queue_len_deframer_sink_b_impl::_phy_i</definition>
+        <argsstring></argsstring>
+        <name>_phy_i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="48" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a5238d82776310e2a8ffe50fa0a420837" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_deframer_sink_b_impl::_pac_len</definition>
+        <argsstring></argsstring>
+        <name>_pac_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="50" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a0b1e4d64f57682d64fb29f1154702e2a" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char gr::Interfaces::queue_len_deframer_sink_b_impl::_preamble</definition>
+        <argsstring></argsstring>
+        <name>_preamble</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="51" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a90c85654e1ea4b5a90f6fefc6476f829" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::queue_len_deframer_sink_b_impl::_log</definition>
+        <argsstring></argsstring>
+        <name>_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="52" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a947f9f58c10fc1732bfc17cd3f1fc3d1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; char &gt;</type>
+        <definition>std::vector&lt;char&gt; gr::Interfaces::queue_len_deframer_sink_b_impl::detect</definition>
+        <argsstring></argsstring>
+        <name>detect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="55" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a2ff08f384bf558b56465b7edc0c65905" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; char &gt;</type>
+        <definition>std::vector&lt;char&gt; gr::Interfaces::queue_len_deframer_sink_b_impl::v_length</definition>
+        <argsstring></argsstring>
+        <name>v_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="56" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a14ddde0e890913c8422ba91ffe21a847" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; char &gt;</type>
+        <definition>std::vector&lt;char&gt; gr::Interfaces::queue_len_deframer_sink_b_impl::byte_buffer</definition>
+        <argsstring></argsstring>
+        <name>byte_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="57" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ab72db241e9de5109609e7757a4899c74" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; char &gt;</type>
+        <definition>std::vector&lt;char&gt; gr::Interfaces::queue_len_deframer_sink_b_impl::packet</definition>
+        <argsstring></argsstring>
+        <name>packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="58" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a532980a5c582d7861fbebddbbb234df9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_deframer_sink_b_impl::ubvtoi</definition>
+        <argsstring>(std::vector&lt; char &gt; v_len)</argsstring>
+        <name>ubvtoi</name>
+        <param>
+          <type>std::vector&lt; char &gt;</type>
+          <declname>v_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a62688ddf090e917ea0b6d0051263cc6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char gr::Interfaces::queue_len_deframer_sink_b_impl::pack</definition>
+        <argsstring>(std::vector&lt; char &gt; ubyte)</argsstring>
+        <name>pack</name>
+        <param>
+          <type>std::vector&lt; char &gt;</type>
+          <declname>ubyte</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a5263d9f26bdcf40734c17fb8f228f733" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::queue_len_deframer_sink_b_impl::check_preamble</definition>
+        <argsstring>(std::vector&lt; char &gt; ub_in)</argsstring>
+        <name>check_preamble</name>
+        <param>
+          <type>std::vector&lt; char &gt;</type>
+          <declname>ub_in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="63" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a317ce2cbf13593bd8fc36cc7b30c4d3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::queue_len_deframer_sink_b_impl::queue_len_deframer_sink_b_impl</definition>
+        <argsstring>(char preamble, bool rxlog)</argsstring>
+        <name>queue_len_deframer_sink_b_impl</name>
+        <param>
+          <type>char</type>
+          <declname>preamble</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rxlog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a11a77b939d7c14fa244eb2bc7d6b8926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::queue_len_deframer_sink_b_impl::~queue_len_deframer_sink_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~queue_len_deframer_sink_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1acd0d0fcb2e3930c764a2377b8c7daad4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::queue_len_deframer_sink_b_impl::receive</definition>
+        <argsstring>()</argsstring>
+        <name>receive</name>
+        <reimplements refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b_1a1b47969b2ec85292b888984cef59b09d">receive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a972cb56971bd0a5fb87c0a1617ba7f2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_deframer_sink_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="70" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>sync_block</label>
+      </node>
+      <node id="6">
+        <label>gr::Interfaces::queue_len_deframer_sink_b</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>gr::Interfaces::queue_len_deframer_sink_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>sync_block</label>
+      </node>
+      <node id="9">
+        <label>gr::Interfaces::queue_len_deframer_sink_b</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>gr::Interfaces::queue_len_deframer_sink_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" line="34" column="1" bodyfile="/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/lib/queue_len_deframer_sink_b_impl.h" bodystart="34" bodyend="73"/>
+    <listofallmembers>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a90c85654e1ea4b5a90f6fefc6476f829" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>_log</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a5238d82776310e2a8ffe50fa0a420837" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>_pac_len</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a18ebebc23990f63efff442d6349e62e2" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>_phy_i</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a0b1e4d64f57682d64fb29f1154702e2a" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>_preamble</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a14ddde0e890913c8422ba91ffe21a847" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>byte_buffer</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a5263d9f26bdcf40734c17fb8f228f733" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>check_preamble</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a947f9f58c10fc1732bfc17cd3f1fc3d1" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>detect</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432ad8b092a06163077e3d74d8789fc4b652" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>DETERMINE_LENGTH</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432ab6827c9c127a8f601c3584507aba2ac9" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>DETERMINE_PACKET</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432a8f5060eeb6cfb6c8bc07ba7f0de7e6c0" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>DETERMINE_PREAMBLE</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b_1a40c21fa4487caa8d211f5a437895bd3d" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a62688ddf090e917ea0b6d0051263cc6e" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>pack</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ab72db241e9de5109609e7757a4899c74" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>packet</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432adf6ba8536d017dbd563cb44b7d9aa326" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>POPULATE_BUFFER</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a317ce2cbf13593bd8fc36cc7b30c4d3f" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>queue_len_deframer_sink_b_impl</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1acd0d0fcb2e3930c764a2377b8c7daad4" prot="public" virt="virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>receive</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b_1aa606403c9a97d578e6ada93eefe60678" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae928599f7ffea18de0fb9bb71cd17432" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>State</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a36207ea3cd1a77c182a1256191891b07" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>state</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1ae58237e083a25e4c3a23b7dd7a523ab3" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>TIMEOUT</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a532980a5c582d7861fbebddbbb234df9" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>ubvtoi</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a2ff08f384bf558b56465b7edc0c65905" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>v_length</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a972cb56971bd0a5fb87c0a1617ba7f2e" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__deframer__sink__b__impl_1a11a77b939d7c14fa244eb2bc7d6b8926" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_deframer_sink_b_impl</scope><name>~queue_len_deframer_sink_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -48,7 +48,7 @@ namespace gr {
        * creating new instances.
        */
       static sptr make(char preamble, bool rxlog);
-      virtual char * receive();
+      virtual char* receive()=0;
     };
 
   } // namespace Interfaces

@@ -1,21 +1,23 @@
 <?xml version="1.0"?>
 <block>
-  <name>queue_len_deframer_sink_b</name>
+  <name>Queue Length-Based Deframer Sink</name>
   <key>Interfaces_queue_len_deframer_sink_b</key>
   <category>Interfaces</category>
   <import>import Interfaces</import>
-  <make>Interfaces.queue_len_deframer_sink_b($preamble, $rxlog)</make>
-
-  <param>
-    <name>Preamble</name>
-    <key>$preamble</key>
-    <type>byte</type>
-  </param>
+  <make>Interfaces.queue_len_deframer_sink_b('U', $rxlog)</make>
 
   <param>
     <name>Log</name>
-    <key>$rxlog</key>
+    <key>rxlog</key>
     <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
   </param>
 
   <sink>
