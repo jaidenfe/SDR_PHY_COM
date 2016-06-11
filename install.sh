@@ -1,7 +1,9 @@
 #!/bin/sh
 cd gr-Interfaces
-mkdir build
+#mkdir build
 cd build
+make uninstall
 cmake ..
 make
 make install
+echo "Install Complete"

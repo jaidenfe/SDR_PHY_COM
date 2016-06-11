@@ -1,0 +1,12 @@
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/Interfaces_swig_swig_2d0df.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/Interfaces_swig_swig_doc.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/_Interfaces_swig.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/_Interfaces_swig_doc_tag.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/_Interfaces_swig_swig_tag.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/docs/doxygen/CMakeFiles/doxygen_target.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/lib/CMakeFiles/gnuradio-Interfaces.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/apps/CMakeFiles/pygen_apps_9a6dd.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/python/CMakeFiles/pygen_python_ec64e.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/swig/CMakeFiles/pygen_swig_1c14c.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/lib/CMakeFiles/test-Interfaces.dir
+/home/ubnl-sof/COM/SDR_PHY_COM/gr-Interfaces/build/CMakeFiles/uninstall.dir
