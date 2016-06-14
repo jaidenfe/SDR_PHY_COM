@@ -15,7 +15,7 @@ from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
 import Interfaces
-
+import time
 
 class queue_deframer_test(gr.top_block):
 
@@ -82,11 +82,22 @@ class queue_deframer_test(gr.top_block):
     def set_samp_per_sym(self, samp_per_sym):
         self.samp_per_sym = samp_per_sym
 
+    def receive(self):
+	return self.Interfaces_queue_len_deframer_sink_b_0.receive()
 
-def main(top_block_cls=queue_deframer_test, options=None):
-
-    tb = top_block_cls()
+def start():
+    tb = queue_deframer_test()
     tb.start()
+
+def receive():
+    tb = queue_deframer_test()
+    tb.start()
+    time.sleep(1)
+    print("Packet 1: " + tb.receive())
+    print("Packet 2: " + tb.receive())
+    print("Packet 3: " + tb.receive())
+    print("Packet 4: " + tb.receive())
+    print("Packet 5: " + tb.receive())
     try:
         raw_input('Press Enter to quit: ')
     except EOFError:
@@ -94,6 +105,6 @@ def main(top_block_cls=queue_deframer_test, options=None):
     tb.stop()
     tb.wait()
 
-
+# Remove after testing
 if __name__ == '__main__':
-    main()
+    receive()

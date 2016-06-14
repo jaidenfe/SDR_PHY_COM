@@ -9,6 +9,7 @@
   <param>
     <name>Log</name>
     <key>rxlog</key>
+    <value>False</value>
     <type>bool</type>
     <option>
       <name>Yes</name>

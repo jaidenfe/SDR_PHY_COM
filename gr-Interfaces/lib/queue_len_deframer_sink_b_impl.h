@@ -35,10 +35,10 @@ namespace gr {
     class queue_len_deframer_sink_b_impl : public queue_len_deframer_sink_b {
 	private:
 
-		static const int TIMEOUT = 100;
+		static const int WAIT_TIME = 100;
 		std::ofstream _log_file;
 
-		// States
+		// Initialize States
 		enum State {
 			POPULATE_BUFFER = 0,
 			DETERMINE_PREAMBLE = 1,
@@ -50,7 +50,7 @@ namespace gr {
 		std::queue<char *> _phy_i;
 		int _pac_len;
 		unsigned char _preamble;
-		bool _log; // TO-DO: Implement log functionality
+		bool _log;
 		double _id_num;
 		std::time_t _startup;
 
@@ -67,6 +67,7 @@ namespace gr {
 		const std::string timestamp();
 
 	public:
+
 		queue_len_deframer_sink_b_impl(char preamble, bool rxlog);
 		~queue_len_deframer_sink_b_impl();
 

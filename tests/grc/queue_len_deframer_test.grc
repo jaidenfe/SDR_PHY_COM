@@ -78,7 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>Queue Length Deframer Test</value>
+      <value>Queue Length-Based Deframer Sink Test</value>
     </param>
   </block>
   <block>
@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 235)</value>
+      <value>(8, 227)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 307)</value>
+      <value>(8, 299)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -182,7 +182,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 235)</value>
+      <value>(976, 235)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -221,7 +221,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(144, 227)</value>
+      <value>(224, 227)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -272,7 +272,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 235)</value>
+      <value>(416, 235)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -331,7 +331,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(680, 195)</value>
+      <value>(760, 195)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -402,7 +402,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(512, 219)</value>
+      <value>(592, 219)</value>
     </param>
     <param>
       <key>_rotation</key>
