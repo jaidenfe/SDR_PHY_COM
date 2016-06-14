@@ -54,6 +54,8 @@ namespace gr {
 		bool _log;
 		double _id_num;
 		std::time_t _startup;
+
+		// Thread specific variables
 		boost::mutex q_mutex;
 		gr::thread::condition_variable d_not_empty;
 

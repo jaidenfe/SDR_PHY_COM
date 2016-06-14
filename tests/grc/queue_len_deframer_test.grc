@@ -194,7 +194,7 @@
     </param>
     <param>
       <key>rxlog</key>
-      <value>False</value>
+      <value>True</value>
     </param>
   </block>
   <block>
@@ -221,7 +221,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 227)</value>
+      <value>(256, 227)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -272,7 +272,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 235)</value>
+      <value>(448, 235)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -331,7 +331,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 195)</value>
+      <value>(776, 195)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -402,7 +402,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(592, 219)</value>
+      <value>(608, 219)</value>
     </param>
     <param>
       <key>_rotation</key>
