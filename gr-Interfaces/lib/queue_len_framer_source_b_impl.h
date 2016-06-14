@@ -24,40 +24,65 @@
 
 #include <Interfaces/queue_len_framer_source_b.h>
 #include <queue>
+#include <string>
+#include <fstream>
+#include <boost/thread/mutex.hpp>
 
 namespace gr {
   namespace Interfaces {
 
     class queue_len_framer_source_b_impl : public queue_len_framer_source_b {
-     private:
-	// Set up global queue, preamble and log so they can be accessed any where in the class
-	std::queue<char *> _phy_i;
-	char _preamble;
-	bool _log;
+	private:
 
-     public:
-	/*
-	 * This constructor initializes the queue length-based framer source block
-	 * and takes in the preamble and log as parameters
-	 */
-	queue_len_framer_source_b_impl(char preamble, bool txlog);
-	~queue_len_framer_source_b_impl();
+		static const int WAIT_TIME = 1000;
+		std::ofstream _log_file;
 
-	/*
-	 * This function will become the external interface exported
-	 * through SWIG to enable the higher layers to add packets
-	 * to the transmission queue.
-	 */
-	void send(char * packet);
+		// Initialize States
+		enum State {
+			BLOCKING = 0,
+			FRAME_PREAMBLE = 1,
+			FRAME_LENGTH = 2,
+			FRAME_PAYLOAD = 3
+		} state;
 
-	/*
-	 * This function converts an integer to a single byte (char)
-	 */
-	char itob(int num);
+		// Initialize Private Variables
+		std::queue<char *> _phy_i;
+		char _preamble;
+		int _pac_len;
+		int _hold;
+		char* _packet;
+		bool _log;
+		double _id_num;
+		std::time_t _startup;
+		boost::mutex q_mutex;
+		gr::thread::condition_variable d_not_empty;
 
-        int work(int noutput_items,
-         gr_vector_const_void_star &input_items,
-         gr_vector_void_star &output_items);
+		/*
+	         * This function converts an integer to a single byte (char)
+		 */
+		char itob(int num);
+		const std::string timestamp();
+		std::time_t uptime();
+		void blocking();
+
+	public:
+
+		/*
+		 * This constructor initializes the queue length-based framer source block
+		 * and takes in the preamble and log as parameters
+		 */
+		queue_len_framer_source_b_impl(char preamble, bool txlog);
+		~queue_len_framer_source_b_impl();
+
+		/*
+		 * This function will become the external interface exported
+		 * through SWIG to enable the higher layers to add packets
+		 * to the transmission queue.
+		 */
+		void send(char * packet);
+	        int work(int noutput_items,
+			gr_vector_const_void_star &input_items,
+			gr_vector_void_star &output_items);
     };
 
   } // namespace Interfaces

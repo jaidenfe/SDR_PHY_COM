@@ -4,18 +4,21 @@
   <key>Interfaces_queue_len_framer_source_b</key>
   <category>Interfaces</category>
   <import>import Interfaces</import>
-  <make>Interfaces.queue_len_framer_source_b($preamble, $txlog)</make>
+  <make>Interfaces.queue_len_framer_source_b('U', $txlog)</make>
   
   <param>
-    <name>Preamble</name>
-    <key>$preamble</key>
-    <type>byte</type>
-  </param>
-
-  <param>
     <name>Log</name>
-    <key>$txlog</key>
+    <key>txlog</key>
+    <value>False</value>
     <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
   </param>
   
   <source>

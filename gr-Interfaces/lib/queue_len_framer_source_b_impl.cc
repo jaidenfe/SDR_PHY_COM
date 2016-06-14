@@ -27,6 +27,8 @@
 #include "queue_len_framer_source_b_impl.h"
 #include <bitset>
 #include <string>
+#include <unistd.h>
+#include <ctime>
 
 namespace gr {
   namespace Interfaces {
@@ -38,73 +40,187 @@ namespace gr {
         (new queue_len_framer_source_b_impl(preamble, txlog));
     }
 
+
+
     /*
      * The private constructor
      */
-    queue_len_framer_source_b_impl::queue_len_framer_source_b_impl(char preamble = 'U', bool txlog = true)
+    queue_len_framer_source_b_impl::queue_len_framer_source_b_impl(char preamble, bool txlog)
       : gr::sync_block("queue_len_framer_source_b",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(1, 1, sizeof(char)))
     {
 	_preamble = preamble;
 	_log = txlog;
+	_id_num = 0;
+	_startup = std::time(NULL);
+	state = BLOCKING;
+
+	if(_log) {
+		_log_file.open("tx_log", std::ios::out);
+		std::cout << "Log File Opened" << std::endl;
+		if(!_log_file.is_open()) {
+			std::cout << "Failed to open log file" << std::endl;
+		}
+		_log_file << "\n\nInitializing Radio Server Transmission...\nRadio Server Initialized: " << timestamp()
+                                        << "\n================================================="
+                                        << "\n[ Packet # ] [      Timestamp      ] [   Payload   ]\n\n";
+	}
     }
 
-    /*
-     * Our virtual destructor.
-     */
-    queue_len_framer_source_b_impl::~queue_len_framer_source_b_impl() {}
 
+
+    /*
+     * The virtual destructor
+     */
+    queue_len_framer_source_b_impl::~queue_len_framer_source_b_impl() {
+	if(_log) {
+		_log_file.close();
+	}
+    }
+
+
+
+    /*
+     * The send function
+     */
     void queue_len_framer_source_b_impl::send(char * packet) {
 
 	_phy_i.push(packet);
+	d_not_empty.notify_all();
     }
 
+
+
+    /*
+     * Conversion between integer and byte
+     */
     char queue_len_framer_source_b_impl::itob(int num) {
 
 	return (static_cast<char>(std::bitset<8>(num).to_ulong()));
     }
 
+
+
+    /*
+     * Timestamp fucntion
+     */
+    const std::string queue_len_framer_source_b_impl::timestamp() {
+        time_t now = time(0);
+        struct tm tstruct;
+        char buf[80];
+        tstruct = *localtime(&now);
+        strftime(buf, sizeof(buf), "%Y-%m-%d @ %X", &tstruct);
+        return buf;
+    }
+
+
+    /*
+     * Uptime function
+     */
+    std::time_t queue_len_framer_source_b_impl::uptime() {
+	return ((std::time(NULL)) - _startup);
+    }
+
+
+
+    /*
+     * Blocking Function
+     */
+    void queue_len_framer_source_b_impl::blocking() {
+	gr::thread::scoped_lock lock(q_mutex);
+	std::cout << "Blocking" << std::endl;
+	while( _phy_i.empty() ) {
+		std::cout << "Empty Queue" << std::endl;
+		std::cout << "Queue Empty: " << _phy_i.empty() << std::endl;
+		d_not_empty.wait(lock);
+	}
+    }
+
+
+
+    /*
+     * The work function
+     * Where all the magic happens
+     */
     int queue_len_framer_source_b_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
-    {
+        gr_vector_void_star &output_items) {
 
-      char *out = (char *) output_items[0];
+	//gr::thread::scoped_lock lock(q_mutex);
+	std::cout << "Output Items: " << noutput_items << std::endl;
+	char *out = (char *) output_items[0];
+	int i = 0;
+	int size = noutput_items;
 
-      if(!_phy_i.empty()) {
-		// Get top packet from queue and remove it
-		char * packet = _phy_i.front();
-		_phy_i.pop();
+	while(size) {
+		switch(state) {
 
-		// Add preamble to output buffer
-		out[0] = _preamble;
-		out[1] = _preamble;
+			case BLOCKING:
+				//while( _phy_i.empty() ) d_not_empty.wait(lock);
+				blocking();
+				_packet = _phy_i.front();
+				_phy_i.pop(); // Maybe pop packet once it is properly sent?
+				out[i] = _preamble;
+				//out += _preamble * sizeof(char);
+				state = FRAME_PREAMBLE;
+				i++;
+				break;
 
-		// Add length of packet to output buffer
-		int length = strlen(packet);
-		out[2] = itob(length);
+			case FRAME_PREAMBLE:
+				std::cout << "Preamble" << std::endl;
+				out[i] = _preamble;
+				//out += _preamble * sizeof(char);
+				state = FRAME_LENGTH;
+				i++;
+				break;
 
-		// Add packet data to output buffer
-		for (int i = 0; i < length; i++) {
+			case FRAME_LENGTH:
+				std::cout << "Length" << std::endl;
+				_pac_len = strlen(_packet);
+				out[i] = itob(_pac_len);
+				//out += itob(_pac_len) * sizeof(char);
+				_hold = (i + 1);
+				state = FRAME_PAYLOAD;
+				i++;
+				break;
 
-			out[i+3] = packet[i];
+			case FRAME_PAYLOAD:
+				std::cout << "Payload" << std::endl;
+				out[i] = _packet[i - _hold];
+				//out += _packet[i - _hold] * sizeof(char);
+				if((i - _hold) == _pac_len) {
+					state = BLOCKING;
+					std::cout << "Logging Packet" << std::endl;
+					std::cout << "Log: " << _log << std::endl;
+					if(_log) {
+						_log_file << std::setfill('0')
+							<< std::setw(12) << _id_num
+							<< " [" << timestamp() << "] "
+							<< _packet << "\nUptime: "
+							<< uptime() << "\n";
+							std::cout << "Uptime: " << uptime() << std::endl;
+					}
+					std::cout << "After Logging" << std::endl;
+					return noutput_items - (size);
+				}
+				std::cout << out[0] << out[1] << out[2] << out[3] << out[4]
+					  << out[5] << out[6] << out[7] << out[8] << out[9]
+					  << out[10] << out[11] << out[12] << std::endl;
+				i++;
+				break;
+
+			default:
+				std::cout << "Default" << std::endl;
+				state = BLOCKING;
+				break;
+
 		}
+		size--;
+	}
 
-		if (_log) {
-
-			std::string output = out;
-			std::cout << "-------------------------------------" << std::endl;
-			std::cout << "\nSuccessfully Transmitted Packet" << std::endl;
-			std::cout << "\nTime: " << std::endl;
-			std::cout << "Length: " << length << std::endl;
-			std::cout << "Packet: " << output << std::endl;
-			std::cout << "------------------------------------" << std::endl;
-		}
-      }
-
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
+	// Tell runtime system how many output items we produced.
+	return noutput_items;
     }
 
   } /* namespace Interfaces */

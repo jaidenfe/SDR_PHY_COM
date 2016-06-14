@@ -63,7 +63,7 @@ namespace gr {
 		if(!_log_file.is_open()) {
 			std::cout << "Failed to open log file" << std::endl;
 		}
-		_log_file << "\n\nInitializing Radio Server...\nRadio Server Initialized: " << timestamp()
+		_log_file << "\n\nInitializing Radio Server Receiving...\nRadio Server Initialized: " << timestamp()
 					<< "\n================================================="
 					<< "\n[ Packet # ] [      Timestamp      ] [   Payload   ]\n\n";
 	}
@@ -171,7 +171,7 @@ namespace gr {
     char* queue_len_deframer_sink_b_impl::receive() {
 
 	// If the queue is empty wait until a packet is added and return the top packet
-	while( _phy_i.empty() ) usleep(TIMEOUT);
+	while( _phy_i.empty() ) usleep(WAIT_TIME);
 
 	// Access and store the first received packet and remove it from the queue
 	char* packet = _phy_i.front();
@@ -251,7 +251,9 @@ namespace gr {
 					_phy_i.push(packet.data());
 					_id_num++;
 					if(_log) {
-						_log_file << std::setfill('0') << std::setw(12) << _id_num << " [" << timestamp() << "] " << packet.data() << "\n" << std::endl;
+						_log_file << std::setfill('0') << std::setw(12) << _id_num
+							  << " [" << timestamp() << "] "
+							  << packet.data() << "\n" << std::endl;
 					}
 					packet.clear();
 					state = POPULATE_BUFFER;
