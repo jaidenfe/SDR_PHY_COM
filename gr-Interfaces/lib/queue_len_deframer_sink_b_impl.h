@@ -65,6 +65,7 @@ namespace gr {
 		char pack(std::vector<char> ubyte);
 		bool check_preamble(std::queue<unsigned char> ub_in);
 		const std::string timestamp();
+		std::time_t uptime();
 
 	public:
 
