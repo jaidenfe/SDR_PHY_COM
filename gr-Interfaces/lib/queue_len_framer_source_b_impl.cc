@@ -58,13 +58,17 @@ namespace gr {
 
 	if(_log) {
 		_log_file.open("tx_log", std::ios::out);
-		std::cout << "Log File Opened" << std::endl;
+
 		if(!_log_file.is_open()) {
+
 			std::cout << "Failed to open log file" << std::endl;
 		}
-		_log_file << "\n\nInitializing Radio Server Transmission...\nRadio Server Initialized: " << timestamp()
-                                        << "\n================================================="
-                                        << "\n[ Packet # ] [      Timestamp      ] [   Payload   ]\n\n";
+
+		_log_file << "\n\nInitializing Radio Server Transmission..."
+			  << "Radio Server Initialized: " << timestamp()
+                          << "\n================================================="
+                          << "\n[ Packet # ] [ Timestamp (Date|Time|Uptime) ] [   Payload   ]\n\n";
+		_log_file.flush();
 	}
     }
 
@@ -110,7 +114,7 @@ namespace gr {
         struct tm tstruct;
         char buf[80];
         tstruct = *localtime(&now);
-        strftime(buf, sizeof(buf), "%Y-%m-%d @ %X", &tstruct);
+        strftime(buf, sizeof(buf), "%Y-%m-%d %X", &tstruct);
         return buf;
     }
 
@@ -128,13 +132,9 @@ namespace gr {
      * Blocking Function
      */
     void queue_len_framer_source_b_impl::blocking() {
+
 	gr::thread::scoped_lock lock(q_mutex);
-	std::cout << "Blocking" << std::endl;
-	while( _phy_i.empty() ) {
-		std::cout << "Empty Queue" << std::endl;
-		std::cout << "Queue Empty: " << _phy_i.empty() << std::endl;
-		d_not_empty.wait(lock);
-	}
+	while( _phy_i.empty() ) d_not_empty.wait(lock);
     }
 
 
@@ -147,9 +147,8 @@ namespace gr {
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items) {
 
-	//gr::thread::scoped_lock lock(q_mutex);
-	std::cout << "Output Items: " << noutput_items << std::endl;
 	char *out = (char *) output_items[0];
+
 	int i = 0;
 	int size = noutput_items;
 
@@ -157,65 +156,61 @@ namespace gr {
 		switch(state) {
 
 			case BLOCKING:
-				//while( _phy_i.empty() ) d_not_empty.wait(lock);
 				blocking();
 				_packet = _phy_i.front();
 				_phy_i.pop(); // Maybe pop packet once it is properly sent?
+				out[i] = (0 != 0);
+				i++;
+				size--;
 				out[i] = _preamble;
-				//out += _preamble * sizeof(char);
 				state = FRAME_PREAMBLE;
 				i++;
 				break;
 
 			case FRAME_PREAMBLE:
-				std::cout << "Preamble" << std::endl;
 				out[i] = _preamble;
-				//out += _preamble * sizeof(char);
 				state = FRAME_LENGTH;
 				i++;
 				break;
 
 			case FRAME_LENGTH:
-				std::cout << "Length" << std::endl;
 				_pac_len = strlen(_packet);
 				out[i] = itob(_pac_len);
-				//out += itob(_pac_len) * sizeof(char);
 				_hold = (i + 1);
 				state = FRAME_PAYLOAD;
 				i++;
 				break;
 
 			case FRAME_PAYLOAD:
-				std::cout << "Payload" << std::endl;
 				out[i] = _packet[i - _hold];
-				//out += _packet[i - _hold] * sizeof(char);
 				if((i - _hold) == _pac_len) {
 					state = BLOCKING;
-					std::cout << "Logging Packet" << std::endl;
-					std::cout << "Log: " << _log << std::endl;
 					if(_log) {
 						_log_file << std::setfill('0')
 							<< std::setw(12) << _id_num
-							<< " [" << timestamp() << "] "
-							<< _packet << "\nUptime: "
-							<< uptime() << "\n";
-							std::cout << "Uptime: " << uptime() << std::endl;
+							<< " [" << timestamp()
+							<< " " << std::setfill('0')
+							<< std::setw(10) << uptime()
+							<< "] "<< _packet << "\n";
+						_log_file.flush();
 					}
-					std::cout << "After Logging" << std::endl;
+
+					i++;
+					size--;
+					_id_num++;
+					out[i] = (0 != 0);
 					return noutput_items - (size);
 				}
-				std::cout << out[0] << out[1] << out[2] << out[3] << out[4]
-					  << out[5] << out[6] << out[7] << out[8] << out[9]
-					  << out[10] << out[11] << out[12] << std::endl;
+
 				i++;
 				break;
 
 			default:
-				std::cout << "Default" << std::endl;
 				state = BLOCKING;
 				break;
 
 		}
+
 		size--;
 	}
 
