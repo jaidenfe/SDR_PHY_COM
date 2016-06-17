@@ -51,7 +51,7 @@ class queue_deframer_test(gr.top_block):
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, "/home/ubnl-sof/COM/SDR_PHY_COM/tests/.sink_test.dat", True)
-        self.Interfaces_queue_len_deframer_sink_b_0 = Interfaces.queue_len_deframer_sink_b('U', True)
+        self.Interfaces_queue_len_deframer_sink_b_0 = Interfaces.queue_len_deframer_sink_b('\x33', True)
 
         ##################################################
         # Connections
@@ -92,7 +92,6 @@ def start():
 def receive():
     tb = queue_deframer_test()
     tb.start()
-    time.sleep(1)
     print("Packet 1: " + tb.receive())
     print("Packet 2: " + tb.receive())
     print("Packet 3: " + tb.receive())

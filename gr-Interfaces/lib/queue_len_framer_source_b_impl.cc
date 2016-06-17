@@ -55,6 +55,8 @@ namespace gr {
 	_id_num = 0;
 	_startup = std::time(NULL);
 	state = BLOCKING;
+	_samples_per_symbol = 26;
+	_bits_per_symbol = 1;
 
 	if(_log) {
 		_log_file.open("tx_log", std::ios::out);
@@ -65,7 +67,7 @@ namespace gr {
 		}
 
 		_log_file << "\n\nInitializing Radio Server Transmission..."
-			  << "Radio Server Initialized: " << timestamp()
+			  << "\nRadio Server Initialized: " << timestamp()
                           << "\n================================================="
                           << "\n[ Packet # ] [ Timestamp (Date|Time|Uptime) ] [   Payload   ]\n\n";
 		_log_file.flush();
@@ -139,6 +141,35 @@ namespace gr {
 
 
 
+    int queue_len_framer_source_b_impl::gcd(int a, int b) {
+
+	if(b == 0) {
+		return a;
+	}
+	else {
+		return gcd(b, (a % b));
+	}
+    }
+
+
+
+    int queue_len_framer_source_b_impl::lcm(int a, int b) {
+
+	return ((a * b)/gcd(a,b));
+    }
+
+
+
+    int queue_len_framer_source_b_impl::n_padding_bytes() {
+
+	int byte_mod = lcm(16, _samples_per_symbol) * _bits_per_symbol/_samples_per_symbol;
+	int r = _pac_len %byte_mod;
+	if (r == 0) return 0;
+	return byte_mod - r;
+    }
+
+
+
     /*
      * The work function
      * Where all the magic happens
@@ -151,6 +182,7 @@ namespace gr {
 
 	int i = 0;
 	int size = noutput_items;
+	int pad;
 
 	while(size) {
 		switch(state) {
@@ -159,7 +191,7 @@ namespace gr {
 				blocking();
 				_packet = _phy_i.front();
 				_phy_i.pop(); // Maybe pop packet once it is properly sent?
-				out[i] = (0 != 0);
+				out[i] = '\x00';
 				i++;
 				size--;
 				out[i] = _preamble;
@@ -176,15 +208,15 @@ namespace gr {
 			case FRAME_LENGTH:
 				_pac_len = strlen(_packet);
 				out[i] = itob(_pac_len);
-				_hold = (i + 1);
 				state = FRAME_PAYLOAD;
 				i++;
+				_hold = i;
 				break;
 
 			case FRAME_PAYLOAD:
 				out[i] = _packet[i - _hold];
 				if((i - _hold) == _pac_len) {
-					state = BLOCKING;
+					state = PADDING;
 					if(_log) {
 						_log_file << std::setfill('0')
 							<< std::setw(12) << _id_num
@@ -194,16 +226,28 @@ namespace gr {
 							<< "] "<< _packet << "\n";
 						_log_file.flush();
 					}
-
-					i++;
-					size--;
+					out[i+1] = '\x00';
+					out[i+2] = '\x55';
+					// check this...
 					_id_num++;
-					out[i] = (0 != 0);
-					return noutput_items - (size);
+					size = size - 3;
+					i = i + 3;
+					break;
 				}
 
 				i++;
 				break;
+
+			case PADDING:
+				pad = n_padding_bytes();
+				for(int v=0; v < pad; v++) {
+					out[i] = '\x55';
+					i++;
+					size--;
+				}
+				state = BLOCKING;
+				return noutput_items - size;
+				// Pad
 
 			default:
 				state = BLOCKING;
