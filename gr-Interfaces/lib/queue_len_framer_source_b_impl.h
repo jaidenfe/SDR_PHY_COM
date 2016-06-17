@@ -42,7 +42,8 @@ namespace gr {
 			BLOCKING = 0,
 			FRAME_PREAMBLE = 1,
 			FRAME_LENGTH = 2,
-			FRAME_PAYLOAD = 3
+			FRAME_PAYLOAD = 3,
+			PADDING = 4
 		} state;
 
 		// Initialize Private Variables
@@ -54,6 +55,8 @@ namespace gr {
 		bool _log;
 		double _id_num;
 		std::time_t _startup;
+		int _samples_per_symbol;
+		int _bits_per_symbol;
 
 		// Thread specific variables
 		boost::mutex q_mutex;
@@ -66,6 +69,9 @@ namespace gr {
 		const std::string timestamp();
 		std::time_t uptime();
 		void blocking();
+		int gcd(int a, int b);
+		int lcm(int a, int b);
+		int n_padding_bytes();
 
 	public:
 

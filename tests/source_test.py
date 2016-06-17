@@ -34,7 +34,7 @@ class queue_framer_test(gr.top_block):
         ##################################################
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, "/home/ubnl-sof/COM/SDR_PHY_COM/tests/.source_test.dat", False)
         self.blocks_file_sink_0.set_unbuffered(True)
-        self.Interfaces_queue_len_framer_source_b_0 = Interfaces.queue_len_framer_source_b('U', True)
+        self.Interfaces_queue_len_framer_source_b_0 = Interfaces.queue_len_framer_source_b('\x33', True)
 
         ##################################################
         # Connections
@@ -83,6 +83,11 @@ def main(top_block_cls=queue_framer_test, options=None):
     except EOFError:
         pass
     tb.send("Eureka!")
+    try:
+	raw_input('Press Enter to Quit: ')
+    except EOFError:
+	pass
+    tb.stop()
     tb.wait()
 
 if __name__ == '__main__':

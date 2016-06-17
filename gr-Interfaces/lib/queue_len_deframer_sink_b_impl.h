@@ -58,7 +58,7 @@ namespace gr {
 		std::queue<unsigned char> detect;
 		std::vector<char> v_length;
 		std::vector<char> byte_buffer;
-		std::vector<char> packet;
+		std::string _packet;
 
 		// Conversion Functions
 		int ubvtoi(std::vector<char> v_len);

@@ -64,9 +64,9 @@ namespace gr {
 			std::cout << "Failed to open log file" << std::endl;
 		}
 		_log_file << "\n\nInitializing Radio Server Receiving..."
-			  << "Radio Server Initialized: " << timestamp()
+			  << "\nRadio Server Initialized: " << timestamp()
 			  << "\n================================================="
-			  << "\n[ Packet # ] [      Timestamp      ] [   Payload   ]\n\n";
+			  << "\n[ Packet # ] [ Timestamp (Date|Time|Uptime) ] [   Payload   ]\n\n";
 		_log_file.flush();
 	}
 
@@ -159,7 +159,7 @@ namespace gr {
 	struct tm tstruct;
 	char buf[80];
 	tstruct = *localtime(&now);
-	strftime(buf, sizeof(buf), "%Y-%m-%d @ %X", &tstruct);
+	strftime(buf, sizeof(buf), "%Y-%m-%d %X", &tstruct);
 	return buf;
     }
 
@@ -251,23 +251,25 @@ namespace gr {
 				byte_buffer.push_back(in[z]);
 
 				if(byte_buffer.size() == 8) {
-					packet.push_back(pack(byte_buffer));
+					_packet.push_back(pack(byte_buffer));
 					byte_buffer.clear();
 				}
 
-				if(packet.size() == _pac_len) {
-					_phy_i.push(packet.data());
-					_id_num++;
+				if(_packet.size() == _pac_len) {
+					char *pp = new char[_pac_len];
+					strcpy(pp, _packet.c_str());
+					_phy_i.push(pp);
 					if(_log) {
 						_log_file << std::setfill('0')
 							  << std::setw(12) << _id_num
 							  << " [" << timestamp()
                                                           << " " << std::setfill('0')
                                                           << std::setw(10) << uptime()
-							  << "] " << packet.data() << "\n";
+							  << "] " << _packet << "\n";
 						_log_file.flush();
 					}
-					packet.clear();
+					_id_num++;
+					_packet.clear();
 					state = POPULATE_BUFFER;
 				}
 				break;
@@ -277,7 +279,7 @@ namespace gr {
 				while(!detect.empty()) detect.pop();
 				v_length.clear();
 				byte_buffer.clear();
-				packet.clear();
+				_packet.clear();
 				state = POPULATE_BUFFER;
 		}
 	}
