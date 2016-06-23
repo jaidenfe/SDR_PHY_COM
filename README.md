@@ -2,7 +2,7 @@
 >University at Buffalo Nanosatellite Laboratory 2016<br>
 >Created By Jaiden Ferraccioli<br>
 >E-mail: jaidenfe@buffalo.edu<br>
->Current Version:    v1.0.0<br>
+>Current Version:    v0.0.1<br>
 <!--
 <br>
 [![Build Status](https://travis-ci.org/jaidenfe/SDR_PHY_COM.svg?branch=master)](https://travis-ci.org/jaidenfe/SDR_PHY_COM)
