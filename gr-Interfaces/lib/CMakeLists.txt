@@ -28,6 +28,8 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND Interfaces_sources
     queue_len_deframer_sink_b_impl.cc
     queue_len_framer_source_b_impl.cc
+    ax25_queue_source_b_impl.cc
+    ax25_queue_sink_b_impl.cc
 )
 
 set(Interfaces_sources "${Interfaces_sources}" PARENT_SCOPE)
