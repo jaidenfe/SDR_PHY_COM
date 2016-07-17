@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl" kind="class" prot="public">
+    <compoundname>gr::Interfaces::queue_len_framer_source_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b" prot="public" virt="non-virtual">gr::Interfaces::queue_len_framer_source_b</basecompoundref>
+    <includes refid="queue__len__framer__source__b__impl_8h" local="no">queue_len_framer_source_b_impl.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0e" prot="private" static="no">
+        <name>State</name>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea33386bfa6ba8c777562a1a039a12a0df" prot="private">
+          <name>BLOCKING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea340c9acbc09b40a502e108e20b846992" prot="private">
+          <name>FRAME_PREAMBLE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea427078e3b9199e48e88a1a2b314c81f0" prot="private">
+          <name>FRAME_LENGTH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea53be5e524381e9cb9622fd1b34413963" prot="private">
+          <name>FRAME_PAYLOAD</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea0b8ad19f9f3bf8459a86e0365cb007ad" prot="private">
+          <name>PADDING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="41" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="41" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ace97a3253b1cc542aa9101769ee97351" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::Interfaces::queue_len_framer_source_b_impl::WAIT_TIME</definition>
+        <argsstring></argsstring>
+        <name>WAIT_TIME</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="37" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7c9efb1c61b157445df35cfb332432a9" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream gr::Interfaces::queue_len_framer_source_b_impl::_log_file</definition>
+        <argsstring></argsstring>
+        <name>_log_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="38" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1af705d9009fc05d310d270e270f291a90" prot="private" static="no" mutable="no">
+        <type>enum gr::Interfaces::queue_len_framer_source_b_impl::State</type>
+        <definition>enum gr::Interfaces::queue_len_framer_source_b_impl::State  gr::Interfaces::queue_len_framer_source_b_impl::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="47" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a2e28dd729c47ed48ef784cf0db94ab02" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; char * &gt;</type>
+        <definition>std::queue&lt;char *&gt; gr::Interfaces::queue_len_framer_source_b_impl::_phy_i</definition>
+        <argsstring></argsstring>
+        <name>_phy_i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="50" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a48a8f866b825af53755e21647c5dda51" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char gr::Interfaces::queue_len_framer_source_b_impl::_preamble</definition>
+        <argsstring></argsstring>
+        <name>_preamble</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="51" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a84ba5e4996b6c6ef651109e2a28a5cda" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::_pac_len</definition>
+        <argsstring></argsstring>
+        <name>_pac_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="52" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aa7821521461ce2c474ed1d3ef36c18a1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::_hold</definition>
+        <argsstring></argsstring>
+        <name>_hold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="53" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a56513f852e58854ef4bb9b75b898cc23" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::queue_len_framer_source_b_impl::_packet</definition>
+        <argsstring></argsstring>
+        <name>_packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="54" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7f2a31b5b2638106ceece8fd590b7751" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::queue_len_framer_source_b_impl::_log</definition>
+        <argsstring></argsstring>
+        <name>_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="55" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7dacf8528b878a48654f76430ef7314e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::Interfaces::queue_len_framer_source_b_impl::_id_num</definition>
+        <argsstring></argsstring>
+        <name>_id_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="56" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aff5c569b5b0ab318aa6181ffbca0a52c" prot="private" static="no" mutable="no">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::queue_len_framer_source_b_impl::_startup</definition>
+        <argsstring></argsstring>
+        <name>_startup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="57" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a27328c294903244df103a241505f8e27" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::_samples_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_samples_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="58" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab91bf6ea4c3454a96f8fc0e2ecc27709" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::_bits_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_bits_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="59" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1acfa1240164d03cd16b782fdd1a1e48b6" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex gr::Interfaces::queue_len_framer_source_b_impl::q_mutex</definition>
+        <argsstring></argsstring>
+        <name>q_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="62" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a17571eb5cbdfcc7d4189c1047e930315" prot="private" static="no" mutable="no">
+        <type>gr::thread::condition_variable</type>
+        <definition>gr::thread::condition_variable gr::Interfaces::queue_len_framer_source_b_impl::d_not_empty</definition>
+        <argsstring></argsstring>
+        <name>d_not_empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="63" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aafacc5f7e158f4a6224cee084a6fbdad" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char gr::Interfaces::queue_len_framer_source_b_impl::itob</definition>
+        <argsstring>(int num)</argsstring>
+        <name>itob</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a36ad2ea879f140bd2b227ef769dca292" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string gr::Interfaces::queue_len_framer_source_b_impl::timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7349c80a669e70410d803d39619448b2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::queue_len_framer_source_b_impl::uptime</definition>
+        <argsstring>()</argsstring>
+        <name>uptime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab46313251f3994af644f894ec387e0ea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::queue_len_framer_source_b_impl::blocking</definition>
+        <argsstring>()</argsstring>
+        <name>blocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ad6c5dd5eaf865ab99ef7cde44e75410e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::gcd</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>gcd</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aad2be0a26a9e31fc28f7b1bbfc1072e8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::lcm</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>lcm</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a5378ae962c449d03c234aeaecfd25443" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::n_padding_bytes</definition>
+        <argsstring>()</argsstring>
+        <name>n_padding_bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="74" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1afb502733728bd32bbc8eb7a971061244" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::queue_len_framer_source_b_impl::queue_len_framer_source_b_impl</definition>
+        <argsstring>(char preamble, bool txlog)</argsstring>
+        <name>queue_len_framer_source_b_impl</name>
+        <param>
+          <type>char</type>
+          <declname>preamble</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>txlog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab657c35afe9a64935b3dac70cb86c609" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::queue_len_framer_source_b_impl::~queue_len_framer_source_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~queue_len_framer_source_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a5b53fb70df4d97c09eeb01a6c8456c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::queue_len_framer_source_b_impl::send</definition>
+        <argsstring>(char *packet)</argsstring>
+        <name>send</name>
+        <reimplements refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b_1af0f6027e10b11d319208e0bf2f85c6d6">send</reimplements>
+        <param>
+          <type>char *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab3afb08e9e628beb33bd66f98f612283" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::queue_len_framer_source_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="91" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="39">
+        <label>gr::Interfaces::queue_len_framer_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>sync_block</label>
+      </node>
+      <node id="38">
+        <label>gr::Interfaces::queue_len_framer_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="42">
+        <label>gr::Interfaces::queue_len_framer_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>sync_block</label>
+      </node>
+      <node id="41">
+        <label>gr::Interfaces::queue_len_framer_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" line="34" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/queue_len_framer_source_b_impl.h" bodystart="34" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab91bf6ea4c3454a96f8fc0e2ecc27709" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_bits_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aa7821521461ce2c474ed1d3ef36c18a1" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_hold</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7dacf8528b878a48654f76430ef7314e" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_id_num</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7f2a31b5b2638106ceece8fd590b7751" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_log</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7c9efb1c61b157445df35cfb332432a9" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_log_file</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a84ba5e4996b6c6ef651109e2a28a5cda" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_pac_len</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a56513f852e58854ef4bb9b75b898cc23" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_packet</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a2e28dd729c47ed48ef784cf0db94ab02" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_phy_i</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a48a8f866b825af53755e21647c5dda51" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_preamble</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a27328c294903244df103a241505f8e27" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_samples_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aff5c569b5b0ab318aa6181ffbca0a52c" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>_startup</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea33386bfa6ba8c777562a1a039a12a0df" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>BLOCKING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab46313251f3994af644f894ec387e0ea" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>blocking</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a17571eb5cbdfcc7d4189c1047e930315" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>d_not_empty</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea427078e3b9199e48e88a1a2b314c81f0" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>FRAME_LENGTH</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea53be5e524381e9cb9622fd1b34413963" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>FRAME_PAYLOAD</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea340c9acbc09b40a502e108e20b846992" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>FRAME_PREAMBLE</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ad6c5dd5eaf865ab99ef7cde44e75410e" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>gcd</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aafacc5f7e158f4a6224cee084a6fbdad" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>itob</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1aad2be0a26a9e31fc28f7b1bbfc1072e8" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>lcm</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b_1a102e59454c1fda51b47f494a5001e0f6" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a5378ae962c449d03c234aeaecfd25443" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>n_padding_bytes</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0ea0b8ad19f9f3bf8459a86e0365cb007ad" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>PADDING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1acfa1240164d03cd16b782fdd1a1e48b6" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>q_mutex</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1afb502733728bd32bbc8eb7a971061244" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>queue_len_framer_source_b_impl</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a5b53fb70df4d97c09eeb01a6c8456c63" prot="public" virt="virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>send</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b_1ae5d7986fc8742a34ea0ec9e467663037" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a15e8b5d5b4a0d036ce875bf1941f6d0e" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>State</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1af705d9009fc05d310d270e270f291a90" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>state</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a36ad2ea879f140bd2b227ef769dca292" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>timestamp</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1a7349c80a669e70410d803d39619448b2" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>uptime</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ace97a3253b1cc542aa9101769ee97351" prot="private" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>WAIT_TIME</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab3afb08e9e628beb33bd66f98f612283" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl_1ab657c35afe9a64935b3dac70cb86c609" prot="public" virt="non-virtual"><scope>gr::Interfaces::queue_len_framer_source_b_impl</scope><name>~queue_len_framer_source_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

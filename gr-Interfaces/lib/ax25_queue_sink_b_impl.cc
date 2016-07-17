@@ -41,7 +41,7 @@ namespace gr {
      */
     ax25_queue_sink_b_impl::ax25_queue_sink_b_impl(char preamble, bool rxlog)
       : gr::sync_block("ax25_queue_sink_b",
-              gr::io_signature::make(<+MIN_IN+>, <+MAX_IN+>, sizeof(<+ITYPE+>)),
+              gr::io_signature::make(1, 1, sizeof(char)),
               gr::io_signature::make(0, 0, 0))
     {}
 
@@ -57,7 +57,7 @@ namespace gr {
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
-      const <+ITYPE+> *in = (const <+ITYPE+> *) input_items[0];
+      const char *in = (const char *) input_items[0];
 
       // Do <+signal processing+>
 

@@ -23,5 +23,7 @@
 install(FILES
     api.h
     queue_len_deframer_sink_b.h
-    queue_len_framer_source_b.h DESTINATION include/Interfaces
+    queue_len_framer_source_b.h
+    ax25_queue_source_b.h
+    ax25_queue_sink_b.h DESTINATION include/Interfaces
 )
