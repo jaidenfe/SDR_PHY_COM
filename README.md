@@ -19,9 +19,22 @@ The following programs are required to use the SDR Physical Layer Interfaces:
 
 This library is used to extend the functionality of GNU Radio. These blocks were designed for use with other applications that require packet radio functionality and were developed using GNU Radio 3.7.9.1 and Python 2.7.
 
-<h3>Installation:</h3>
+<h3>Content</h3>
+The gr-Interfaces module contains several interface blocks, with more to come, that help integrate developers software with GNU Radio. Here is a list of the blocks contained within gr-Interfaces with a description of their functionality:
+<ul>
+  <li><b>AX.25 Queue Source -</b> Allows for AX.25 protocol to be implemented with an easy to use transmission queue interface</li>
+  <li><b>AX.25 Queue Sink -</b> Receives AX.25 packets, checks their CRC values and stores the payload in the receive queue</li>
+  <li><b>Queue Length-Based Framer Source -</b> Frames packets contained within the transmission queue using length-based framing</li>
+  <li><b>Queue Length-Based Framer Sink -</b> Receives framed packets using length-based framing techniques and stores the packet in the receive queue</li>
+</ul>
 
-In order to install the gr-Interfaces blocks (queue length-based framer source and sink) follow the instructions below:
+<h3>Installation</h3>
+
+There are two ways to install the gr-Interfaces module. The easiest way to install is to run the _install.sh_ script from your terminal. 
+
+```$ ./install.sh```
+
+The other, more tedious way to install this module is to follow the instructions below:
 
 Open a terminal window and change into the gr-Interfaces directory.
 
@@ -38,7 +51,7 @@ Then make and install the blocks
 
 You can now open gnuradio-companion and use the gr-Interfaces blocks under the <b>INTERFACES</b> tab.
 
-<h3>Uninstalling:</h3>
+<h3>Uninstalling</h3>
 
 To uninstall the blocks change into the ```gr-Interfaces/build``` directory
 <br>```$ cd PATH/TO/DIR/gr-Interfaces/build```
