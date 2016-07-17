@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>Queue Length-Based Deframer Sink</name>
+  <name>Queue Length-Based Framer Sink</name>
   <key>Interfaces_queue_len_deframer_sink_b</key>
   <category>Interfaces</category>
   <import>import Interfaces</import>
