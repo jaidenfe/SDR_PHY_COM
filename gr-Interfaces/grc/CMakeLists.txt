@@ -19,5 +19,7 @@
 
 install(FILES
     Interfaces_queue_len_deframer_sink_b.xml
-    Interfaces_queue_len_framer_source_b.xml DESTINATION share/gnuradio/grc/blocks
+    Interfaces_queue_len_framer_source_b.xml
+    Interfaces_ax25_queue_source_b.xml
+    Interfaces_ax25_queue_sink_b.xml DESTINATION share/gnuradio/grc/blocks
 )

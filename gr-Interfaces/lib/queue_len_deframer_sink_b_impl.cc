@@ -112,7 +112,7 @@ namespace gr {
         out[0] = static_cast<char>( bit_buffer0.to_ulong() );
         out[1] = static_cast<char>( bit_buffer1.to_ulong() );
 
-        return (out[0] == _preamble && out[1] == _preamble);
+        return (out[0] == 'G' && out[1] == 'P');
     }
 
 
@@ -256,7 +256,7 @@ namespace gr {
 				}
 
 				if(_packet.size() == _pac_len) {
-					char *pp = new char[_pac_len];
+					char *pp = new char[_pac_len]; // Possible Memory leak?
 					strcpy(pp, _packet.c_str());
 					_phy_i.push(pp);
 					if(_log) {

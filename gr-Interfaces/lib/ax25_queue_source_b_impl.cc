@@ -29,6 +29,7 @@
 #include <string>
 #include <unistd.h>
 #include <ctime>
+#include <stdio.h>
 
 namespace gr {
   namespace Interfaces {
@@ -53,7 +54,7 @@ namespace gr {
 	_id_num = 0;
 	_startup = std::time(NULL);
 	state = BLOCKING;
-	_samples+per_symbol = 26;
+	_samples_per_symbol = 24;
 	_bits_per_symbol = 1;
 
 	if(_log) {
@@ -133,7 +134,9 @@ namespace gr {
     }
 
 
-
+    /*
+     * Greatest Common Denominator Function
+     */
     int ax25_queue_source_b_impl::gcd(int a, int b) {
 
         if(b == 0) {
@@ -145,14 +148,18 @@ namespace gr {
     }
 
 
-
+    /*
+     * Least Common Multiple Function
+     */
     int ax25_queue_source_b_impl::lcm(int a, int b) {
 
         return ((a * b)/gcd(a,b));
     }
 
 
-
+    /*
+     * Padding Function for USRP
+     */
     int ax25_queue_source_b_impl::n_padding_bytes() {
 
         int byte_mod = lcm(16, _samples_per_symbol) * _bits_per_symbol/_samples_per_symbol;
@@ -161,102 +168,105 @@ namespace gr {
         return byte_mod - r;
     }
 
-    char* ax25_queue_source_b_impl::bit_stuff(char* pac) {
-	int sim = 0;
-	int r = 0;
-	int t_len = 0;
-	char* ret;
-	char* rret;
+
+
+
+
+
+
+
+
+    /*
+     * Bit Stuffing Function
+     * Re-write this function
+     */
+    void ax25_queue_source_b_impl::bit_stuff(char* pac) {
+	// Implement this stupid bit stuffing bullshit
+	char unpacked[2464];
+	char packed[308];
+	int count = 0;
+	int unpack_len = 0;
+	int pack_len = 0;
+	int pos = 0;
+	_pac_len = strlen(pac);
+	// Populate Unpacked Byte Buffer
 	for(int i = 0; i < _pac_len; i++) {
-		for(int b = 0; b < 8; b++) {
-			ret[r] = ((pac[i] >> b) & 1);
-			t_len++;
-			if (ret[r] == '\x01') {
-				sim++;
+		for(int j = 0; j < 8; j++) {
+			char a = ((pac[i] >> j) & '\x01');
+			if(a == '\x01') count++;
+			else count = 0;
+			unpacked[pos] = a;
+			unpack_len++;
+			pos++;
+			if(count == 5){
+				count = 0;
+				unpacked[pos] = '\x00';
+				unpack_len++;
+				pos++;
 			}
-			if(ret[r] == '\x00') {
-				sim = 0;
-			}
-			if(sim == 5) {
-				r++;
-				ret[r] = '\x00';
-				t_len++;
-			}
-			r++;
 		}
-`	}
-	// Repack the bit-stuffed payload
-	int rp = 7;
-	int t = 0;
-	for(int j = 0; j < t_len; j++) {
-		if(rp == 0) {
-			rp = 7;
-			t++;
+	}
+
+	// Make sure unpacked byte buffer is a multiple of 8
+	// and zero stuff if it is not
+	while((unpack_len%8) != 0){
+		unpacked[pos] = '\x00';
+		unpack_len++;
+		pos++;
+	}
+
+	// Repack the byte buffer and memcpy it into a char*
+	int l = 0;
+	int s = 7;
+	char t = '\x00';
+	for(int k=0; k < unpack_len; k++) {
+
+		if(s == 0) {
+			packed[l] = t;
+			s = 7;
+			t = '\x00';
+			l++;
+			pack_len++;
 		}
-		rret[t] = (ret[j] << rp) & rret[t];
-		rp--;
+
+		t = (unpacked[k] << s) & t;
+		s--;
 	}
-	return rret;
+	//_packet = &packed; // _packet is a char* to point to a char array (string)
+
+	for(int n = 0; n < pack_len; n++){
+		_packet[n] = packed[n];
+		std::cout << packed[n] << "\n" << std::endl;
+	}
+	std::cout << "Unpack Length: " << unpack_len << std::endl;
+	std::cout << "Pack Length: " << pack_len << std::endl;
+	//memcpy(_packet, packed, pack_len);
+
     }
 
 
 
 
-
-
-
-
-// IMPLEMENT THE FCS CHECKSUM FIELD DESCRIBED BELOW IN C
-
-
-/* Table of CRCs of all 8-bit messages. */
-   unsigned long crc_table[256];
-
-   /* Flag: has the table been computed? Initially false. */
-   int crc_table_computed = 0;
-
-   /* Make the table for a fast CRC. */
-   void make_crc_table(void)
-   {
-     unsigned long c;
-     int n, k;
-
-     for (n = 0; n < 256; n++) {
-       c = (unsigned long) n;
-       for (k = 0; k < 8; k++) {
-         if (c & 1)
-           c = 0xedb88320L ^ (c >> 1);
-         else
-           c = c >> 1;
-       }
-       crc_table[n] = c;
-     }
-     crc_table_computed = 1;
-   }
-
-
-
-    unsigned long ax25_queue_source_b_impl::update_crc(unsigned long crc, unsigned char *buff, int len) {
-	unsigned long c = crc;
-	int n;
-	if(!crc_table_computed){
-		make_crc_table();
+    /*
+     * FCS Field Calculation Function
+     */
+    short unsigned int ax25_queue_source_b_impl::calculate_crc(char* buf, int len){
+	short unsigned int crc = 0xffff;
+	for(int i = 0; i < len; i++){
+		for(int j = 0; j < 8; j++){
+			if((crc & 0x0001) != ((buf[i] >> j) & 0x01)){
+				crc = (crc >> 1) ^ 0x8408;
+			}
+			else {
+				crc = crc >> 1;
+			}
+		}
 	}
-	for(n=0; n<len; n++) {
-		c = crc_table[(c^buf[n]) & 0xff] ^ (c >> 8);
-	}
-	return c;
+	crc = crc ^ 0xffff;
+	return crc;
     }
 
-    std::vecotr<char> ax25_queue_source_b_impl::calc_fcs(char* output, int length) {
-	std::vector<char> ret;
-	unsigned long crc_calc;
-	crc_calc = update_crc(0xffffffffL, output, length) ^ 0xffffffffL;
 
-	ret[0] = ;
-	ret[1] = ;
-	return ret;
-    }
 
     int ax25_queue_source_b_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
@@ -272,47 +282,62 @@ namespace gr {
                 switch(state) {
 
                         case BLOCKING:
+				std::cout << "Blocking" << std::endl;
                                 blocking();
-                                _packet = _phy_i.front();
+				delete[] _packet;
+                                bit_stuff(_phy_i.front());
+				_pac_len = std::strlen(_packet);
                                 _phy_i.pop();
                                 out[i] = '\x00';
                                 i++;
                                 size--;
                                 out[i] = '\x7e';
                                 state = ADDRESS_FIELD;
+				size--;
                                 i++;
                                 break;
 
                         case ADDRESS_FIELD:
+				std::cout << "Address Field" << std::endl;
                                 out[i] = 'W';
 				out[i+1] = 'J';
 				out[i+2] = '9';
 				out[i+3] = 'X';
 				out[i+4] = 'L';
 				out[i+5] = 'E';
-				out[i+6] = '\xe0'; // SSID #1
+				out[i+6] = '\x01'; // SSID #1
 				out[i+7] = 'W';
 				out[i+8] = 'J';
 				out[i+9] = '9';
 				out[i+10] = 'X';
 				out[i+11] = 'L';
 				out[i+12] = 'E';
-				out[i+13] = '\x61'; // SSID #2
+				out[i+13] = '\x02'; // SSID #2
                                 state = CONTROL_FIELD;
-                                i+=14;
+				size= size-14;
+                                i = i+14;
                                 break;
 
                         case CONTROL_FIELD:
+				std::cout << "Control Field" << std::endl;
                                 out[i] = '\x03'; // Control Field for UI Frame with no immediate responce required (Poll/Final bit set to zero)
 				out[i+1] = '\xf0'; // No Layer 3 Protocol Implemented
                                 state = INFO_FIELD;
-                                i+=2;
+				size=size-2;
+                                i=i+2;
 				_hold = i;
-				_packet = bit_stuff(_packet); // every 5 1 bits in a row add a zero after
                                 break;
 
                        case INFO_FIELD:
+				std::cout << "Information Field" << std::endl;
+				//std::cout << "Why aren't you working?" << std::endl;
+				//std::cout << "i: " << i;
+				//std::cout << "\nhold: " << _hold << std::endl;
+				//std::cout << "Packet: " << _packet[0] << std::endl;
+				//std::cout << "Output: " << out[i] << std::endl;
                                 out[i] = _packet[i - _hold];
+  				//_packet bit_stuff(_packet, out, i);
+				//std::cout << "Pre IF Statement" << std::endl;
                                 if((i - _hold) == _pac_len) {
                                         state = PADDING;
                                         if(_log) {
@@ -321,24 +346,39 @@ namespace gr {
                                                         << " [" << timestamp()
                                                         << " " << std::setfill('0')
                                                         << std::setw(10) << uptime()
-                                                        << "] "<< _packet << "\n";
+                                                        << "] "<< _packet << "\nRaw Packet: ";
+							int c = 0;
+							while (c != i){
+								_log_file << out[c];
+								c++;
+							}
+						_log_file << "\n";
                                                 _log_file.flush();
                                         }
-					std::vecotr<char> fcs = calc_fcs()
-                                        out[i+1] = fcs[0];
-                                        out[i+2] = fcs[1];
+
+					std::cout << "Pre-FCS" << std::endl;
+
+					short unsigned int fcs;
+					fcs = calculate_crc(out, std::strlen(out));
+					std::cout << "CRC: " << fcs << std::endl;
+
+					// Get the two bits out of the short
+					out[i+1] = '\x00';
+					out[i+2] = '\x00';
 					out[i+3] = '\x7e'; // Ending Flag
                                         // check this...
                                         _id_num++;
-                                        size = size - 4;
-                                        i = i + 4;
+                                        size -= 3;
+                                        i += 3;
                                         break;
                                 }
-
+				//std::cout << "Post IF Statement" << std::endl;
+				size--;
                                 i++;
                                 break;
 
                         case PADDING:
+				std::cout << "Padding" << std::endl;
                                 pad = n_padding_bytes();
                                 for(int v=0; v < pad; v++) {
                                         out[i] = '\x55';
@@ -347,7 +387,6 @@ namespace gr {
                                 }
 				state = BLOCKING;
                                 return noutput_items - size;
-                                // Pad
 
                         default:
                                 state = BLOCKING;
@@ -355,7 +394,6 @@ namespace gr {
 
                 }
 
-                size--;
         }
 
 

@@ -1,0 +1,657 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl" kind="class" prot="public">
+    <compoundname>gr::Interfaces::ax25_queue_source_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1Interfaces_1_1ax25__queue__source__b" prot="public" virt="non-virtual">gr::Interfaces::ax25_queue_source_b</basecompoundref>
+    <includes refid="ax25__queue__source__b__impl_8h" local="no">ax25_queue_source_b_impl.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569d" prot="private" static="no">
+        <name>State</name>
+        <enumvalue id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569da4b8886ed75acf5ce973ae967ca0c8ec7" prot="private">
+          <name>BLOCKING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569dad417eb503af3a6d6d97af3493ea824e6" prot="private">
+          <name>ADDRESS_FIELD</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569da61e4583acff4913b68b24f5040614ffc" prot="private">
+          <name>CONTROL_FIELD</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569daa7132795d7853cfd52c7c4e648d0645f" prot="private">
+          <name>INFO_FIELD</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569dac34e647f258be87de7575d8d21b2db92" prot="private">
+          <name>PADDING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="40" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="40" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ac74e5eb39038929b866894db8696cc77" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::Interfaces::ax25_queue_source_b_impl::WAIT_TIME</definition>
+        <argsstring></argsstring>
+        <name>WAIT_TIME</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="36" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a2765bf4e706140204baffd4d89af4672" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream gr::Interfaces::ax25_queue_source_b_impl::_log_file</definition>
+        <argsstring></argsstring>
+        <name>_log_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="37" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ade31664fdd45ed33db6f341bc6ab72fd" prot="private" static="no" mutable="no">
+        <type>enum gr::Interfaces::ax25_queue_source_b_impl::State</type>
+        <definition>enum gr::Interfaces::ax25_queue_source_b_impl::State  gr::Interfaces::ax25_queue_source_b_impl::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a01b2579448be1d02c92dec381e6d0ac9" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; char * &gt;</type>
+        <definition>std::queue&lt;char *&gt; gr::Interfaces::ax25_queue_source_b_impl::_phy_i</definition>
+        <argsstring></argsstring>
+        <name>_phy_i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="49" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1af1b4b15cd8d7b625089885d36bcca03c" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char gr::Interfaces::ax25_queue_source_b_impl::_preamble</definition>
+        <argsstring></argsstring>
+        <name>_preamble</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="50" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6414b681cc197136b492b1d924e6ccbb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::_pac_len</definition>
+        <argsstring></argsstring>
+        <name>_pac_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="51" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a54fa42b3b014df1b4f27354b41bacf2c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::_hold</definition>
+        <argsstring></argsstring>
+        <name>_hold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="52" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1afa4a5316009e8d4d21b517c74af784ba" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::ax25_queue_source_b_impl::_packet</definition>
+        <argsstring></argsstring>
+        <name>_packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="53" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ae51a764ac64264ed3a3deaaa9f7d5460" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::ax25_queue_source_b_impl::_log</definition>
+        <argsstring></argsstring>
+        <name>_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="54" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a3ceb4d0179b7c16cf5582f35830c55f1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::Interfaces::ax25_queue_source_b_impl::_id_num</definition>
+        <argsstring></argsstring>
+        <name>_id_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="55" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad69f0c9fdafd12c68816628ffae97d6d" prot="private" static="no" mutable="no">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::ax25_queue_source_b_impl::_startup</definition>
+        <argsstring></argsstring>
+        <name>_startup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="56" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a361bb74c3483a0e1b1308c1cd1f7f83e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::_samples_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_samples_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="57" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1aa01656133f4078e8e73c57b86e6981b2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::_bits_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_bits_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="58" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1abf07c720c4a97b60c7319bd3fb64cc89" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex gr::Interfaces::ax25_queue_source_b_impl::q_mutex</definition>
+        <argsstring></argsstring>
+        <name>q_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="61" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a65e396ef359ed2e60e65f61b55838e50" prot="private" static="no" mutable="no">
+        <type>gr::thread::condition_variable</type>
+        <definition>gr::thread::condition_variable gr::Interfaces::ax25_queue_source_b_impl::d_not_empty</definition>
+        <argsstring></argsstring>
+        <name>d_not_empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="62" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a9aa1ff9e7c74b12da95741277b2dd650" prot="private" static="no" mutable="no">
+        <type>long unsigned int</type>
+        <definition>long unsigned int gr::Interfaces::ax25_queue_source_b_impl::crc_table[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>crc_table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="77" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1af7283e5ce22039643e41a67610cef6ae" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::ax25_queue_source_b_impl::crc_table_computed</definition>
+        <argsstring></argsstring>
+        <name>crc_table_computed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="78" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a40d3a519376eb56930f392b3e7652e50" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char gr::Interfaces::ax25_queue_source_b_impl::itob</definition>
+        <argsstring>(int num)</argsstring>
+        <name>itob</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a72d33abf887e975eb8644efd86c7d4f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string gr::Interfaces::ax25_queue_source_b_impl::timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="68" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a4c501e075926d6bf70f98edf05442558" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::ax25_queue_source_b_impl::uptime</definition>
+        <argsstring>()</argsstring>
+        <name>uptime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a12c9c64dabbbd3cd60344a191553a1be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::ax25_queue_source_b_impl::blocking</definition>
+        <argsstring>()</argsstring>
+        <name>blocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a710f9e92472185013e39b3e37cb18311" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::gcd</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>gcd</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ae1559ba5ddf4074ee72fa7adea891013" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::lcm</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>lcm</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a782be178ea77c64a8a524449ac5f13d8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::n_padding_bytes</definition>
+        <argsstring>()</argsstring>
+        <name>n_padding_bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1afc5409c3d4297e72482e3bf9df861f08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::ax25_queue_source_b_impl::bit_stuff</definition>
+        <argsstring>(char *pac)</argsstring>
+        <name>bit_stuff</name>
+        <param>
+          <type>char *</type>
+          <declname>pac</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6d4c59617b2f1e63937bd19b10f871ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::ax25_queue_source_b_impl::make_crc_table</definition>
+        <argsstring>()</argsstring>
+        <name>make_crc_table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6e1c11ee9540fa68a488dfd57e79dd41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long unsigned int</type>
+        <definition>long unsigned int gr::Interfaces::ax25_queue_source_b_impl::update_crc</definition>
+        <argsstring>(long unsigned int crc, char *buf, int len)</argsstring>
+        <name>update_crc</name>
+        <param>
+          <type>long unsigned int</type>
+          <declname>crc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad9045e18f6c89e71ae59f5d237b12311" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long unsigned int</type>
+        <definition>long unsigned int gr::Interfaces::ax25_queue_source_b_impl::calc_fcs</definition>
+        <argsstring>(char *output, int length)</argsstring>
+        <name>calc_fcs</name>
+        <param>
+          <type>char *</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a42232291761203e1e23b1fce0158a88b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned short</type>
+        <definition>unsigned short gr::Interfaces::ax25_queue_source_b_impl::calculate_crc</definition>
+        <argsstring>(char *buf, int len)</argsstring>
+        <name>calculate_crc</name>
+        <param>
+          <type>char *</type>
+          <declname>buf</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="82" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad7876236605f795c1c6c71fed9bca9c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::ax25_queue_source_b_impl::ax25_queue_source_b_impl</definition>
+        <argsstring>(char preamble, bool txlog)</argsstring>
+        <name>ax25_queue_source_b_impl</name>
+        <param>
+          <type>char</type>
+          <declname>preamble</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>txlog</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a1954cd6191eba5fc0bd6c432992e64ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::ax25_queue_source_b_impl::~ax25_queue_source_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~ax25_queue_source_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a5b3c9fb62c04720604dba1ee2216ecc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::ax25_queue_source_b_impl::send</definition>
+        <argsstring>(char *packet)</argsstring>
+        <name>send</name>
+        <reimplements refid="classgr_1_1Interfaces_1_1ax25__queue__source__b_1a0381161c38a10bac290de91badc99d38">send</reimplements>
+        <param>
+          <type>char *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ac0190e2958c64599797763ed746497af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_queue_source_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="89" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>gr::Interfaces::ax25_queue_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__queue__source__b"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="16">
+        <label>gr::Interfaces::ax25_queue_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>gr::Interfaces::ax25_queue_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__queue__source__b"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="19">
+        <label>gr::Interfaces::ax25_queue_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" line="34" column="1" bodyfile="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h" bodystart="33" bodyend="92"/>
+    <listofallmembers>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1aa01656133f4078e8e73c57b86e6981b2" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_bits_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a54fa42b3b014df1b4f27354b41bacf2c" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_hold</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a3ceb4d0179b7c16cf5582f35830c55f1" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_id_num</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ae51a764ac64264ed3a3deaaa9f7d5460" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_log</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a2765bf4e706140204baffd4d89af4672" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_log_file</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6414b681cc197136b492b1d924e6ccbb" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_pac_len</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1afa4a5316009e8d4d21b517c74af784ba" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_packet</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a01b2579448be1d02c92dec381e6d0ac9" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_phy_i</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1af1b4b15cd8d7b625089885d36bcca03c" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_preamble</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a361bb74c3483a0e1b1308c1cd1f7f83e" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_samples_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad69f0c9fdafd12c68816628ffae97d6d" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>_startup</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569dad417eb503af3a6d6d97af3493ea824e6" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>ADDRESS_FIELD</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad7876236605f795c1c6c71fed9bca9c3" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>ax25_queue_source_b_impl</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1afc5409c3d4297e72482e3bf9df861f08" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>bit_stuff</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569da4b8886ed75acf5ce973ae967ca0c8ec7" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>BLOCKING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a12c9c64dabbbd3cd60344a191553a1be" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>blocking</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad9045e18f6c89e71ae59f5d237b12311" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>calc_fcs</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a42232291761203e1e23b1fce0158a88b" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>calculate_crc</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569da61e4583acff4913b68b24f5040614ffc" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>CONTROL_FIELD</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a9aa1ff9e7c74b12da95741277b2dd650" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>crc_table</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1af7283e5ce22039643e41a67610cef6ae" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>crc_table_computed</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a65e396ef359ed2e60e65f61b55838e50" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>d_not_empty</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a710f9e92472185013e39b3e37cb18311" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>gcd</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569daa7132795d7853cfd52c7c4e648d0645f" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>INFO_FIELD</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a40d3a519376eb56930f392b3e7652e50" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>itob</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ae1559ba5ddf4074ee72fa7adea891013" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>lcm</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b_1adb653144d571e07bdf03eaa54d191e07" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6d4c59617b2f1e63937bd19b10f871ed" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>make_crc_table</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a782be178ea77c64a8a524449ac5f13d8" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>n_padding_bytes</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569dac34e647f258be87de7575d8d21b2db92" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>PADDING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1abf07c720c4a97b60c7319bd3fb64cc89" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>q_mutex</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a5b3c9fb62c04720604dba1ee2216ecc2" prot="public" virt="virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>send</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b_1ad6327935787e36274b3ed243be43302b" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ade31664fdd45ed33db6f341bc6ab72fd" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>state</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a35e6fc2d8508ae7a4de91292ac4f569d" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>State</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a72d33abf887e975eb8644efd86c7d4f1" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>timestamp</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6e1c11ee9540fa68a488dfd57e79dd41" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>update_crc</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a4c501e075926d6bf70f98edf05442558" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>uptime</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ac74e5eb39038929b866894db8696cc77" prot="private" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>WAIT_TIME</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ac0190e2958c64599797763ed746497af" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a1954cd6191eba5fc0bd6c432992e64ca" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_queue_source_b_impl</scope><name>~ax25_queue_source_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

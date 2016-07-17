@@ -170,7 +170,9 @@
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>*** Need to implement a "Pad for USRP" option ***
+*** Need to allow for preamble setting ***
+*** Need to create send/receive functions in python automatically ***</value>
     </param>
     <param>
       <key>affinity</key>
@@ -182,7 +184,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(800, 427)</value>
+      <value>(568, 371)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -205,7 +207,9 @@
     </param>
     <param>
       <key>comment</key>
-      <value></value>
+      <value>*** Need to implement a "Pad for USRP" option ***
+*** Need to allow for preamble setting ***
+*** Need to create send/receive functions in python automatically ***</value>
     </param>
     <param>
       <key>affinity</key>
@@ -217,7 +221,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(192, 219)</value>
+      <value>(24, 219)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -264,7 +268,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(672, 219)</value>
+      <value>(504, 219)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -315,7 +319,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(504, 387)</value>
+      <value>(304, 331)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -386,7 +390,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(488, 203)</value>
+      <value>(336, 203)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1093,7 +1097,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(880, 163)</value>
+      <value>(664, 163)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2168,7 +2172,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 395)</value>
+      <value>(24, 339)</value>
     </param>
     <param>
       <key>_rotation</key>
