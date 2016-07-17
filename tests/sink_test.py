@@ -16,6 +16,7 @@ from gnuradio.filter import firdes
 from optparse import OptionParser
 import Interfaces
 import time
+import os
 
 class queue_deframer_test(gr.top_block):
 
@@ -50,7 +51,9 @@ class queue_deframer_test(gr.top_block):
         	log=False,
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_char*1, samp_rate,True)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, "/home/ubnl-sof/COM/SDR_PHY_COM/tests/.sink_test.dat", True)
+        #self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, "/home/ubnl-sof/COM/SDR_PHY_COM/tests/.sink_test.dat", True)
+        path = str(os.path.dirname(os.path.realpath(__file__))) + "/.sink_test.dat"
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_char*1, path, True)
         self.Interfaces_queue_len_deframer_sink_b_0 = Interfaces.queue_len_deframer_sink_b('\x33', True)
 
         ##################################################
@@ -92,11 +95,17 @@ def start():
 def receive():
     tb = queue_deframer_test()
     tb.start()
+    print("Started")
     print("Packet 1: " + tb.receive())
     print("Packet 2: " + tb.receive())
     print("Packet 3: " + tb.receive())
     print("Packet 4: " + tb.receive())
     print("Packet 5: " + tb.receive())
+    print("Packet 6: " + tb.receive())
+    print("Packet 7: " + tb.receive())
+    print("Packet 8: " + tb.receive())
+    print("Packet 9: " + tb.receive())
+    print("Packet 10: " + tb.receive())
     try:
         raw_input('Press Enter to quit: ')
     except EOFError:
