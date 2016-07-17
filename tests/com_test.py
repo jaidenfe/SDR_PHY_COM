@@ -35,7 +35,7 @@ class com_test(gr.top_block):
         # Blocks
         ##################################################
         self.uhd_usrp_source_0 = uhd.usrp_source(
-        	",".join(("address0=192.168.10.3", "")),
+        	",".join(("address0=192.168.10.2", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
@@ -46,7 +46,7 @@ class com_test(gr.top_block):
         self.uhd_usrp_source_0.set_gain(0, 0)
         self.uhd_usrp_source_0.set_antenna("TX/RX", 0)
         self.uhd_usrp_sink_0 = uhd.usrp_sink(
-        	",".join(("address0=192.168.10.2", "")),
+        	",".join(("address0=192.168.10.3", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
@@ -115,7 +115,7 @@ class com_test(gr.top_block):
 	return self.Interfaces_queue_len_deframer_sink_b_0.receive()
 
 
-def main(top_block_cls=com_test, options=None):
+def test_send(top_block_cls=com_test, options=None):
 
     tb = top_block_cls()
     tb.start()
@@ -145,6 +145,29 @@ def main(top_block_cls=com_test, options=None):
 	pass
     tb.stop()
     tb.wait()
+
+
+def main(top_block_cls=com_test, options=None):
+
+	tb = top_block_cls()
+	tb.start()
+	print("Started")
+	print("Packet 1: " + tb.receive())
+	print("Packet 2: " + tb.receive())
+	print("Packet 3: " + tb.receive())
+	print("Packet 4: " + tb.receive())
+	print("Packet 5: " + tb.receive())
+	print("Packet 6: " + tb.receive())
+	print("Packet 7: " + tb.receive())
+	print("Packet 8: " + tb.receive())
+	print("Packet 9: " + tb.receive())
+	print("Packet 10: " + tb.receive())
+	try:
+		raw_input('Press Enter to quit: ')
+	except EOFError:
+		pass
+	tb.stop()
+	tb.wait()
 
 
 if __name__ == '__main__':
