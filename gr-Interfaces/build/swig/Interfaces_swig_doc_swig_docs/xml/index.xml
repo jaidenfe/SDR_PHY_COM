@@ -36,8 +36,8 @@
   </compound>
   <compound refid="queue__len__framer__source__b_8h" kind="file"><name>queue_len_framer_source_b.h</name>
   </compound>
-  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include</name>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include</name>
   </compound>
-  <compound refid="dir_15ed6569ea5834b5f18ad73179dedf2f" kind="dir"><name>/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces</name>
+  <compound refid="dir_15ed6569ea5834b5f18ad73179dedf2f" kind="dir"><name>/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include/Interfaces</name>
   </compound>
 </doxygenindex>

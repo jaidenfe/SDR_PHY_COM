@@ -10,6 +10,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/lib/"/>
   </compounddef>
 </doxygen>

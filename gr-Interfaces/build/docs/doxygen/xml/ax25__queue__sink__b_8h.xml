@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_sink_b.h"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_sink_b.h"/>
   </compounddef>
 </doxygen>

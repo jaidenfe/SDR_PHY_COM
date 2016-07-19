@@ -11,9 +11,6 @@
       <node id="37">
         <label>boost/thread/mutex.hpp</label>
       </node>
-      <node id="34">
-        <label>queue</label>
-      </node>
       <node id="30">
         <label>Interfaces/ax25_queue_source_b.h</label>
         <link refid="ax25__queue__source__b_8h"/>
@@ -21,6 +18,9 @@
         </childnode>
         <childnode refid="33" relation="include">
         </childnode>
+      </node>
+      <node id="34">
+        <label>queue</label>
       </node>
       <node id="29">
         <label>ax25_queue_source_b_impl.h</label>
@@ -62,6 +62,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_source_b_impl.h"/>
   </compounddef>
 </doxygen>

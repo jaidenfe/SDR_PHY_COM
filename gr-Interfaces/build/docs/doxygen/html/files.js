@@ -22,7 +22,5 @@ var files =
     [ "queue_len_framer_source_b.h", "queue__len__framer__source__b_8h.html", [
       [ "queue_len_framer_source_b", "classgr_1_1Interfaces_1_1queue__len__framer__source__b.html", "classgr_1_1Interfaces_1_1queue__len__framer__source__b" ]
     ] ],
-    [ "queue_len_framer_source_b_impl.h", "queue__len__framer__source__b__impl_8h.html", [
-      [ "queue_len_framer_source_b_impl", "classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl.html", "classgr_1_1Interfaces_1_1queue__len__framer__source__b__impl" ]
-    ] ]
+    [ "queue_len_framer_source_b_impl.h", "queue__len__framer__source__b__impl_8h.html", "queue__len__framer__source__b__impl_8h" ]
 ];

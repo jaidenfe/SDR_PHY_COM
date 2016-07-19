@@ -9,6 +9,14 @@
       <node id="46">
         <label>gnuradio/sync_block.h</label>
       </node>
+      <node id="43">
+        <label>queue_len_deframer_sink_b.h</label>
+        <link refid="queue_len_deframer_sink_b.h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
       <node id="45">
         <label>gnuradio/attributes.h</label>
       </node>
@@ -16,14 +24,6 @@
         <label>Interfaces/api.h</label>
         <link refid="api_8h"/>
         <childnode refid="45" relation="include">
-        </childnode>
-      </node>
-      <node id="43">
-        <label>queue_len_deframer_sink_b.h</label>
-        <link refid="queue_len_deframer_sink_b.h"/>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces/queue_len_deframer_sink_b.h"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include/Interfaces/queue_len_deframer_sink_b.h"/>
   </compounddef>
 </doxygen>

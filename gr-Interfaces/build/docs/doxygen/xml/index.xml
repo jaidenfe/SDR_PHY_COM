@@ -36,8 +36,6 @@
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1aa01656133f4078e8e73c57b86e6981b2" kind="variable"><name>_bits_per_symbol</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1abf07c720c4a97b60c7319bd3fb64cc89" kind="variable"><name>q_mutex</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a65e396ef359ed2e60e65f61b55838e50" kind="variable"><name>d_not_empty</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a9aa1ff9e7c74b12da95741277b2dd650" kind="variable"><name>crc_table</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1af7283e5ce22039643e41a67610cef6ae" kind="variable"><name>crc_table_computed</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a40d3a519376eb56930f392b3e7652e50" kind="function"><name>itob</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a72d33abf887e975eb8644efd86c7d4f1" kind="function"><name>timestamp</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a4c501e075926d6bf70f98edf05442558" kind="function"><name>uptime</name></member>
@@ -45,10 +43,7 @@
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a710f9e92472185013e39b3e37cb18311" kind="function"><name>gcd</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ae1559ba5ddf4074ee72fa7adea891013" kind="function"><name>lcm</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a782be178ea77c64a8a524449ac5f13d8" kind="function"><name>n_padding_bytes</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1afc5409c3d4297e72482e3bf9df861f08" kind="function"><name>bit_stuff</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6d4c59617b2f1e63937bd19b10f871ed" kind="function"><name>make_crc_table</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a6e1c11ee9540fa68a488dfd57e79dd41" kind="function"><name>update_crc</name></member>
-    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad9045e18f6c89e71ae59f5d237b12311" kind="function"><name>calc_fcs</name></member>
+    <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a1b8f146cb6cb07bed878e549a91b86ca" kind="function"><name>bit_stuff</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a42232291761203e1e23b1fce0158a88b" kind="function"><name>calculate_crc</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1ad7876236605f795c1c6c71fed9bca9c3" kind="function"><name>ax25_queue_source_b_impl</name></member>
     <member refid="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_1a1954cd6191eba5fc0bd6c432992e64ca" kind="function"><name>~ax25_queue_source_b_impl</name></member>
@@ -156,6 +151,7 @@
   <compound refid="queue__len__framer__source__b_8h" kind="file"><name>queue_len_framer_source_b.h</name>
   </compound>
   <compound refid="queue__len__framer__source__b__impl_8h" kind="file"><name>queue_len_framer_source_b_impl.h</name>
+    <member refid="queue__len__framer__source__b__impl_8h_1ace6c02dc322d70ce0349f6cad72d8e37" kind="define"><name>PACKET_LEN_MAX</name></member>
   </compound>
   <compound refid="group__block" kind="group"><name>block</name>
   </compound>

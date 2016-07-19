@@ -6,7 +6,7 @@
     <includes local="no">gnuradio/sync_block.h</includes>
     <incdepgraph>
       <node id="12">
-        <label>/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_source_b.h</label>
+        <label>/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_source_b.h</label>
         <link refid="ax25_queue_source_b.h"/>
         <childnode refid="13" relation="include">
         </childnode>
@@ -79,6 +79,6 @@
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_INTERFACES_AX25_QUEUE_SOURCE_B_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
 <codeline lineno="57"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_source_b.h"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/include/Interfaces/ax25_queue_source_b.h"/>
   </compounddef>
 </doxygen>

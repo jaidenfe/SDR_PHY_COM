@@ -126,31 +126,26 @@ $(document).ready(function(){initNavTree('ax25__queue__source__b__impl_8h_source
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordtype">int</span> gcd(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">int</span> lcm(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">int</span> n_padding_bytes();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">char</span>* bit_stuff(<span class="keywordtype">char</span>* pac);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="keywordtype">void</span> bit_stuff(<span class="keywordtype">char</span>* pac);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="comment">// Stuff for CRC Calculations</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> crc_table[256];</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordtype">bool</span> crc_table_computed;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordtype">void</span> make_crc_table();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> update_crc(<span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> crc, <span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> len);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> calc_fcs(<span class="keywordtype">char</span>* output, <span class="keywordtype">int</span> length);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> calculate_crc(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> len);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;     <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#ad7876236605f795c1c6c71fed9bca9c3">ax25_queue_source_b_impl</a>(<span class="keywordtype">char</span> preamble, <span class="keywordtype">bool</span> txlog);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#a1954cd6191eba5fc0bd6c432992e64ca">~ax25_queue_source_b_impl</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#a5b3c9fb62c04720604dba1ee2216ecc2">send</a>(<span class="keywordtype">char</span> * packet);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#ac0190e2958c64599797763ed746497af">work</a>(<span class="keywordtype">int</span> noutput_items,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         gr_vector_const_void_star &amp;input_items,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;         gr_vector_void_star &amp;output_items);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  } <span class="comment">// namespace Interfaces</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace gr</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDED_INTERFACES_AX25_QUEUE_SOURCE_B_IMPL_H */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> calculate_crc(<span class="keywordtype">char</span>* buf, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;     <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#ad7876236605f795c1c6c71fed9bca9c3">ax25_queue_source_b_impl</a>(<span class="keywordtype">char</span> preamble, <span class="keywordtype">bool</span> txlog);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#a1954cd6191eba5fc0bd6c432992e64ca">~ax25_queue_source_b_impl</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#a5b3c9fb62c04720604dba1ee2216ecc2">send</a>(<span class="keywordtype">char</span> * packet);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#ac0190e2958c64599797763ed746497af">work</a>(<span class="keywordtype">int</span> noutput_items,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         gr_vector_const_void_star &amp;input_items,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;         gr_vector_void_star &amp;output_items);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  } <span class="comment">// namespace Interfaces</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace gr</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INCLUDED_INTERFACES_AX25_QUEUE_SOURCE_B_IMPL_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl_html_a5b3c9fb62c04720604dba1ee2216ecc2"><div class="ttname"><a href="classgr_1_1Interfaces_1_1ax25__queue__source__b__impl.html#a5b3c9fb62c04720604dba1ee2216ecc2">gr::Interfaces::ax25_queue_source_b_impl::send</a></div><div class="ttdeci">void send(char *packet)</div></div>
 <div class="ttc" id="ax25__queue__source__b_8h_html"><div class="ttname"><a href="ax25__queue__source__b_8h.html">ax25_queue_source_b.h</a></div></div>
 <div class="ttc" id="classgr_1_1Interfaces_1_1ax25__queue__source__b_html"><div class="ttname"><a href="classgr_1_1Interfaces_1_1ax25__queue__source__b.html">gr::Interfaces::ax25_queue_source_b</a></div><div class="ttdoc">&lt;+description of block+&gt; </div><div class="ttdef"><b>Definition:</b> ax25_queue_source_b.h:36</div></div>
@@ -164,7 +159,7 @@ $(document).ready(function(){initNavTree('ax25__queue__source__b__impl_8h_source
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="ax25__queue__source__b__impl_8h.html">ax25_queue_source_b_impl.h</a></li>
-    <li class="footer">Generated on Fri Jul 1 2016 16:42:59 for GNU Radio&#39;s INTERFACES Package by
+    <li class="footer">Generated on Sun Jul 17 2016 17:53:16 for GNU Radio&#39;s INTERFACES Package by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

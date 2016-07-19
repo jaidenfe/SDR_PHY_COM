@@ -67,5 +67,6 @@ var NAVTREEINDEX0 =
 "queue__len__framer__source__b_8h.html":[2,0,7],
 "queue__len__framer__source__b_8h_source.html":[2,0,7],
 "queue__len__framer__source__b__impl_8h.html":[2,0,8],
+"queue__len__framer__source__b__impl_8h.html#ace6c02dc322d70ce0349f6cad72d8e37":[2,0,8,1],
 "queue__len__framer__source__b__impl_8h_source.html":[2,0,8]
 };

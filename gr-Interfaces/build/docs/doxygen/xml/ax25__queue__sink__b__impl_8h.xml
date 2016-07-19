@@ -4,12 +4,6 @@
     <compoundname>ax25_queue_sink_b_impl.h</compoundname>
     <includes refid="ax25__queue__sink__b_8h" local="no">Interfaces/ax25_queue_sink_b.h</includes>
     <incdepgraph>
-      <node id="17">
-        <label>ax25_queue_sink_b_impl.h</label>
-        <link refid="ax25_queue_sink_b_impl.h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
-      </node>
       <node id="21">
         <label>gnuradio/sync_block.h</label>
       </node>
@@ -20,6 +14,12 @@
         <label>Interfaces/api.h</label>
         <link refid="api_8h"/>
         <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>ax25_queue_sink_b_impl.h</label>
+        <link refid="ax25_queue_sink_b_impl.h"/>
+        <childnode refid="18" relation="include">
         </childnode>
       </node>
       <node id="18">
@@ -38,6 +38,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/ground/jaidenfe/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_sink_b_impl.h"/>
+    <location file="/home/ubnl/COM/develop/custom_blocks/SDR_PHY_COM/gr-Interfaces/lib/ax25_queue_sink_b_impl.h"/>
   </compounddef>
 </doxygen>
