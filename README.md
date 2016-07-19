@@ -1,4 +1,4 @@
-<h1>SDR Physical Layer Interface</h1>
+<h1>gr-Interfaces</h1>
 >University at Buffalo Nanosatellite Laboratory 2016<br>
 >Created By Jaiden Ferraccioli<br>
 >E-mail: jaidenfe@buffalo.edu<br>
@@ -8,24 +8,24 @@
 [![Build Status](https://travis-ci.org/jaidenfe/SDR_PHY_COM.svg?branch=master)](https://travis-ci.org/jaidenfe/SDR_PHY_COM)
 -->
 
-SDR_PHY_COM is a physical layer interface between a Software Defined Radio (SDR) and custom python applications. This program uses GNU Radio as the signal processing engine. These blocks offer full duplex packet radio connectivity in a simple and user-friendly package. 
+gr-Interfaces is a GNU Radio module that provides interfaces between GNU Radio flowgraphs and custom python applications. The blocks contained within this module offer full duplex, and simplex, packet radio connectivity in a simple, user-defined way. 
 
 <h3>Dependencies</h3>
 The following programs are required to use the SDR Physical Layer Interfaces:
 <ul>
-  <li> <a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/Download">GNU Radio 3.7.9.1</a><br>
+  <li> <a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/Download">GNU Radio 3.7.10</a><br>
   <li> Python 2.7 <br>
 </ul>
 
-This library is used to extend the functionality of GNU Radio. These blocks were designed for use with other applications that require packet radio functionality and were developed using GNU Radio 3.7.9.1 and Python 2.7.
+This module is used to extend the functionality of GNU Radio. These blocks were designed for use with other applications that require packet radio functionality and were developed using GNU Radio 3.7.10 and Python 2.7.
 
 <h3>Content</h3>
 The gr-Interfaces module contains several interface blocks, with more to come, that help integrate developers software with GNU Radio. Here is a list of the blocks contained within gr-Interfaces with a description of their functionality:
 <ul>
-  <li><b>AX.25 Queue Source -</b> Allows for AX.25 protocol to be implemented with an easy to use transmission queue interface</li>
-  <li><b>AX.25 Queue Sink -</b> Receives AX.25 packets, checks their CRC values and stores the payload in the receive queue</li>
-  <li><b>Queue Length-Based Framer Source -</b> Frames packets contained within the transmission queue using length-based framing</li>
-  <li><b>Queue Length-Based Framer Sink -</b> Receives framed packets using length-based framing techniques and stores the packet in the receive queue</li>
+  <li><b>AX.25 Source -</b> Allows for AX.25 protocol to be implemented with an easy to use transmission queue interface</li>
+  <li><b>AX.25 Sink -</b> Receives AX.25 packets, checks their CRC values and stores the payload in the receive queue</li>
+  <li><b>Length Framing Source -</b> Frames packets contained within the transmission queue using length-based framing</li>
+  <li><b>Length Framing Sink -</b> Receives framed packets using length-based framing techniques and stores the packet in the receive queue</li>
 </ul>
 
 <h3>Installation</h3>
