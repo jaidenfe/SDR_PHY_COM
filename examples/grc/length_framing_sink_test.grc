@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.9'?>
+<?grc format='1' created='3.7.10'?>
 <flow_graph>
   <timestamp>Mon Jun  6 19:10:17 2016</timestamp>
   <block>
@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>queue_deframer_test</value>
+      <value>length_framing_sink_test</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -78,7 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>Queue Length-Based Deframer Sink Test</value>
+      <value>Length-Based Framing Sink Test</value>
     </param>
   </block>
   <block>
@@ -163,7 +163,7 @@
     </param>
   </block>
   <block>
-    <key>Interfaces_queue_len_deframer_sink_b</key>
+    <key>Interfaces_length_framing_sink_b</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -182,7 +182,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(728, 155)</value>
+      <value>(768, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -190,11 +190,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>Interfaces_queue_len_deframer_sink_b_0</value>
+      <value>Interfaces_length_framing_sink_b_0</value>
     </param>
     <param>
-      <key>rxlog</key>
+      <key>log</key>
       <value>True</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>U</value>
     </param>
   </block>
   <block>
@@ -221,7 +225,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 147)</value>
+      <value>(16, 148)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -272,7 +276,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 155)</value>
+      <value>(208, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -331,7 +335,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 115)</value>
+      <value>(552, 116)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -402,7 +406,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(360, 139)</value>
+      <value>(376, 140)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -451,7 +455,7 @@
   </connection>
   <connection>
     <source_block_id>digital_gfsk_demod_0</source_block_id>
-    <sink_block_id>Interfaces_queue_len_deframer_sink_b_0</sink_block_id>
+    <sink_block_id>Interfaces_length_framing_sink_b_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

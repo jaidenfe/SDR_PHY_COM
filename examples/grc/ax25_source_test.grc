@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.9'?>
+<?grc format='1' created='3.7.10'?>
 <flow_graph>
   <timestamp>Fri Jul  1 16:18:31 2016</timestamp>
   <block>
@@ -22,7 +22,7 @@
     </param>
     <param>
       <key>description</key>
-      <value>Testing AX.25 encoding and crc calucaltions.</value>
+      <value>Testing AX.25 encoding and crc calucaltions</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -30,7 +30,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 8)</value>
+      <value>(8, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>ax25_tx_test</value>
+      <value>ax25_source_test</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -78,7 +78,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>ax25_tx_test</value>
+      <value>AX.25 Source Test</value>
     </param>
   </block>
   <block>
@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 11)</value>
+      <value>(296, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(496, 11)</value>
+      <value>(504, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 11)</value>
+      <value>(376, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -174,7 +174,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(184, 11)</value>
+      <value>(184, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -190,7 +190,7 @@
     </param>
   </block>
   <block>
-    <key>Interfaces_ax25_queue_source_b</key>
+    <key>Interfaces_ax25_source_b</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -204,12 +204,16 @@
       <value></value>
     </param>
     <param>
+      <key>dst</key>
+      <value></value>
+    </param>
+    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 259)</value>
+      <value>(88, 244)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -217,11 +221,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>Interfaces_ax25_queue_source_b_0</value>
-    </param>
-    <param>
-      <key>txlog</key>
-      <value>True</value>
+      <value>Interfaces_ax25_source_b_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -230,6 +230,10 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>src</key>
+      <value></value>
     </param>
   </block>
   <block>
@@ -256,7 +260,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 259)</value>
+      <value>(480, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -307,7 +311,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(200, 243)</value>
+      <value>(304, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1014,7 +1018,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(528, 211)</value>
+      <value>(632, 204)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1141,6 +1145,10 @@
       <value>False</value>
     </param>
     <param>
+      <key>hide_lo_controls</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>stream_args</key>
       <value></value>
     </param>
@@ -1162,7 +1170,7 @@
     </param>
   </block>
   <connection>
-    <source_block_id>Interfaces_ax25_queue_source_b_0</source_block_id>
+    <source_block_id>Interfaces_ax25_source_b_0</source_block_id>
     <sink_block_id>digital_gfsk_mod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>

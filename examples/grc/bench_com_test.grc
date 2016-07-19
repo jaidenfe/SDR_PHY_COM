@@ -290,7 +290,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(560, 340)</value>
+      <value>(552, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -303,6 +303,10 @@
     <param>
       <key>log</key>
       <value>True</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>U</value>
     </param>
   </block>
   <block>
@@ -329,7 +333,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 164)</value>
+      <value>(16, 156)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -350,6 +354,10 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
+    </param>
+    <param>
+      <key>preamble</key>
+      <value>U</value>
     </param>
   </block>
   <block>
