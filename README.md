@@ -8,10 +8,10 @@
 [![Build Status](https://travis-ci.org/jaidenfe/SDR_PHY_COM.svg?branch=master)](https://travis-ci.org/jaidenfe/SDR_PHY_COM)
 -->
 
-gr-Interfaces is a GNU Radio module that provides interfaces between GNU Radio flowgraphs and custom python applications. The blocks contained within this module offer full duplex, and simplex, packet radio connectivity in a simple, user-defined way. 
+gr-Interfaces is a physical layer interface module between GNU Radio and other software applications. It was designed to be used with a Software Defined Radio (SDR) and custom python applications. These blocks offer full or half duplex packet radio capabilities to developer projects. 
 
 <h3>Dependencies</h3>
-The following programs are required to use the SDR Physical Layer Interfaces:
+The following programs are required for gr-Interfaces:
 <ul>
   <li> <a href="http://gnuradio.org/redmine/projects/gnuradio/wiki/Download">GNU Radio 3.7.10</a><br>
   <li> Python 2.7 <br>

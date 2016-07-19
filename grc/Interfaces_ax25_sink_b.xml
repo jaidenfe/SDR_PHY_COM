@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX.25 Sink</name>
+  <key>Interfaces_ax25_sink_b</key>
+  <category>[Interfaces]/AX.25</category>
+  <import>import Interfaces</import>
+  <make>Interfaces.ax25_sink_b($src, $dst)</make>
+  <param>
+    <name>Source Callsign</name>
+    <key>src</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Destination Callsign</name>
+    <key>dst</key>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+</block>

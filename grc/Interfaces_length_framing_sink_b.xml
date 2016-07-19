@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<block>
+  <name>Length Framing Sink</name>
+  <key>Interfaces_length_framing_sink_b</key>
+  <category>[Interfaces]/Framing</category>
+  <import>import Interfaces</import>
+  <make>Interfaces.length_framing_sink_b($preamble, $log)</make>
+
+  <param>
+    <name>Preamble</name>
+    <key>preamble</key>
+    <value>U</value>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Log</name>
+    <key>log</key>
+    <value>False</value>
+    <type>bool</type>
+    <option>
+      <name>Yes</name>
+      <key>True</key>
+    </option>
+    <option>
+      <name>No</name>
+      <key>False</key>
+    </option>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+    <vlen>$&gt;)</vlen>
+  </sink>
+</block>
