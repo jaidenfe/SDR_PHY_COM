@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<block>
+  <name>AX.25 Source</name>
+  <key>Interfaces_ax25_source_b</key>
+  <category>[Interfaces]/AX.25</category>
+  <import>import Interfaces</import>
+  <make>Interfaces.ax25_source_b($src, $dst)</make>
+
+  <param>
+    <name>Source Callsign</name>
+    <key>src</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Destination Callsign</name>
+    <key>dst</key>
+    <type>string</type>
+  </param>
+
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>

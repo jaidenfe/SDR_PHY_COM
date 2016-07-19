@@ -1,8 +1,7 @@
 #!/bin/bash
-cd gr-Interfaces
 mkdir build
 cd build
-make uninstall
+sudo make uninstall
 cmake ..
 make
-make install
+sudo make install
