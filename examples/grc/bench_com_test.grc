@@ -93,7 +93,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(552, 12)</value>
+      <value>(560, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -120,7 +120,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(288, 12)</value>
+      <value>(296, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -147,7 +147,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(480, 12)</value>
+      <value>(488, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -174,7 +174,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(648, 12)</value>
+      <value>(656, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -201,7 +201,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 12)</value>
+      <value>(376, 12)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1201,11 +1201,11 @@
     </param>
     <param>
       <key>dev_addr</key>
-      <value>device0=192.168.10.2</value>
+      <value>"addr=192.168.10.2"</value>
     </param>
     <param>
       <key>dev_args</key>
-      <value>""</value>
+      <value>"addr=192.168.10.2"</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1213,7 +1213,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(536, 100)</value>
+      <value>(536, 92)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2538,11 +2538,11 @@ Operational Frequencies: 400MHz - 4.4GHz</value>
     </param>
     <param>
       <key>dev_addr</key>
-      <value>device0=192.168.10.3</value>
+      <value>"addr=192.168.10.3"</value>
     </param>
     <param>
       <key>dev_args</key>
-      <value>""</value>
+      <value>"addr=192.168.10.3"</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -2550,7 +2550,7 @@ Operational Frequencies: 400MHz - 4.4GHz</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(16, 300)</value>
+      <value>(16, 292)</value>
     </param>
     <param>
       <key>_rotation</key>
