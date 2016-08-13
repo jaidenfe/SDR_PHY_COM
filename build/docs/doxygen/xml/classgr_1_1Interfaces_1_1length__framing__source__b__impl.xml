@@ -1,0 +1,527 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classgr_1_1Interfaces_1_1length__framing__source__b__impl" kind="class" prot="public">
+    <compoundname>gr::Interfaces::length_framing_source_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1Interfaces_1_1length__framing__source__b" prot="public" virt="non-virtual">gr::Interfaces::length_framing_source_b</basecompoundref>
+    <includes refid="length__framing__source__b__impl_8h" local="no">length_framing_source_b_impl.h</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255" prot="private" static="no">
+        <name>State</name>
+        <enumvalue id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a0f378ee33da0e8905f94d963215d2310" prot="private">
+          <name>BLOCKING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255afcae1787628225e4267c79c3a06ec500" prot="private">
+          <name>FRAME_PREAMBLE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a51c4e3dbba4876ce6f11366297d3139a" prot="private">
+          <name>FRAME_LENGTH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a2dfa8be2232a408e665597ec546cb560" prot="private">
+          <name>FRAME_PAYLOAD</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255adff92c6d45779ad8df42fb66198e3185" prot="private">
+          <name>PADDING</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="43" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="43" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a3254c0afb17354cb3e8dfd2f36fb4275" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::Interfaces::length_framing_source_b_impl::WAIT_TIME</definition>
+        <argsstring></argsstring>
+        <name>WAIT_TIME</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="39" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a1ac3398832bb3a0c493814f36884d82c" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream gr::Interfaces::length_framing_source_b_impl::_log_file</definition>
+        <argsstring></argsstring>
+        <name>_log_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="40" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a811c30bef59fb6fe69d994ca026e1d99" prot="private" static="no" mutable="no">
+        <type>enum gr::Interfaces::length_framing_source_b_impl::State</type>
+        <definition>enum gr::Interfaces::length_framing_source_b_impl::State  gr::Interfaces::length_framing_source_b_impl::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80554f76dd1983c91ccf4be13279936c" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; char * &gt;</type>
+        <definition>std::queue&lt;char *&gt; gr::Interfaces::length_framing_source_b_impl::_phy_i</definition>
+        <argsstring></argsstring>
+        <name>_phy_i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="52" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aa4a78ff1316ede01333d541db24a9465" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::length_framing_source_b_impl::_preamble</definition>
+        <argsstring></argsstring>
+        <name>_preamble</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="53" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1adac71b40ee127d31ea7b11f05633e389" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::_pac_len</definition>
+        <argsstring></argsstring>
+        <name>_pac_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="54" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a46e64b07ae84d96ac623054e4ed75f88" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::_hold</definition>
+        <argsstring></argsstring>
+        <name>_hold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="55" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a8fa6c83010d6f701e2852ed86e7abb90" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::length_framing_source_b_impl::_packet</definition>
+        <argsstring></argsstring>
+        <name>_packet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="56" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a607d3652c3f1ebe65e81eeb7cfdb8533" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::Interfaces::length_framing_source_b_impl::_log</definition>
+        <argsstring></argsstring>
+        <name>_log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="57" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a4d97dee09c777b3bb9897fd789203c7e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::Interfaces::length_framing_source_b_impl::_id_num</definition>
+        <argsstring></argsstring>
+        <name>_id_num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="58" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a7148e75afc7377f37648fe460cba26e0" prot="private" static="no" mutable="no">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::length_framing_source_b_impl::_startup</definition>
+        <argsstring></argsstring>
+        <name>_startup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="59" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a8bf11fde97828cd3d6bd1cd44fa212ff" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::_samples_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_samples_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="60" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ad29fd21c839fc03ab546055256877590" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::_bits_per_symbol</definition>
+        <argsstring></argsstring>
+        <name>_bits_per_symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="61" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ab240ced8a83ddacfa508103dfcdb4311" prot="private" static="no" mutable="no">
+        <type>boost::mutex</type>
+        <definition>boost::mutex gr::Interfaces::length_framing_source_b_impl::q_mutex</definition>
+        <argsstring></argsstring>
+        <name>q_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="64" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a006ff901a2f0d7dfc5193d774cc2b539" prot="private" static="no" mutable="no">
+        <type>gr::thread::condition_variable</type>
+        <definition>gr::thread::condition_variable gr::Interfaces::length_framing_source_b_impl::d_not_empty</definition>
+        <argsstring></argsstring>
+        <name>d_not_empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="65" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a6bd0af9b56cbddd455d32dda32a571f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char gr::Interfaces::length_framing_source_b_impl::itob</definition>
+        <argsstring>(int num)</argsstring>
+        <name>itob</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="70" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a69c2a956c79c2a0972d04f8412a023a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::string</type>
+        <definition>const std::string gr::Interfaces::length_framing_source_b_impl::timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aa2deaecd0944296e675d237368a303de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::time_t</type>
+        <definition>std::time_t gr::Interfaces::length_framing_source_b_impl::uptime</definition>
+        <argsstring>()</argsstring>
+        <name>uptime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="72" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a73a5ef8cc33cdcd13375a5f9ce64bcec" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::length_framing_source_b_impl::blocking</definition>
+        <argsstring>()</argsstring>
+        <name>blocking</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="73" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1affe64a0ad4e444751a8db5d744a7133c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::gcd</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>gcd</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ac16092edbd7612752bc1fd953521d674" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::lcm</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>lcm</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="75" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ab5a7be46e41bb39d5eb2c61d153ccfae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::n_padding_bytes</definition>
+        <argsstring>()</argsstring>
+        <name>n_padding_bytes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="76" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aace17d7ba7cbbb971fb96e02a4d21d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::length_framing_source_b_impl::length_framing_source_b_impl</definition>
+        <argsstring>(char *preamble, bool log)</argsstring>
+        <name>length_framing_source_b_impl</name>
+        <param>
+          <type>char *</type>
+          <declname>preamble</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>log</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a1a983ef8e560c254e1540ca6f95fad71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::length_framing_source_b_impl::~length_framing_source_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~length_framing_source_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ac823ab2c14b313bf057a243e6ae90719" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::Interfaces::length_framing_source_b_impl::send</definition>
+        <argsstring>(char *packet)</argsstring>
+        <name>send</name>
+        <reimplements refid="classgr_1_1Interfaces_1_1length__framing__source__b_1aa1062b7292cb84c603d27a5febab8bef">send</reimplements>
+        <param>
+          <type>char *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a987428c09beeab249dd98ce245663600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::length_framing_source_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="92" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>gr::Interfaces::length_framing_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>gr::Interfaces::length_framing_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1length__framing__source__b"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>gr::sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>gr::Interfaces::length_framing_source_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>gr::Interfaces::length_framing_source_b</label>
+        <link refid="classgr_1_1Interfaces_1_1length__framing__source__b"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>gr::sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" line="36" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_source_b_impl.h" bodystart="36" bodyend="95"/>
+    <listofallmembers>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ad29fd21c839fc03ab546055256877590" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_bits_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a46e64b07ae84d96ac623054e4ed75f88" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_hold</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a4d97dee09c777b3bb9897fd789203c7e" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_id_num</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a607d3652c3f1ebe65e81eeb7cfdb8533" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_log</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a1ac3398832bb3a0c493814f36884d82c" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_log_file</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1adac71b40ee127d31ea7b11f05633e389" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_pac_len</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a8fa6c83010d6f701e2852ed86e7abb90" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_packet</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80554f76dd1983c91ccf4be13279936c" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_phy_i</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aa4a78ff1316ede01333d541db24a9465" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_preamble</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a8bf11fde97828cd3d6bd1cd44fa212ff" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_samples_per_symbol</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a7148e75afc7377f37648fe460cba26e0" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>_startup</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a0f378ee33da0e8905f94d963215d2310" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>BLOCKING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a73a5ef8cc33cdcd13375a5f9ce64bcec" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>blocking</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a006ff901a2f0d7dfc5193d774cc2b539" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>d_not_empty</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a51c4e3dbba4876ce6f11366297d3139a" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>FRAME_LENGTH</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255a2dfa8be2232a408e665597ec546cb560" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>FRAME_PAYLOAD</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255afcae1787628225e4267c79c3a06ec500" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>FRAME_PREAMBLE</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1affe64a0ad4e444751a8db5d744a7133c" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>gcd</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a6bd0af9b56cbddd455d32dda32a571f3" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>itob</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ac16092edbd7612752bc1fd953521d674" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>lcm</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aace17d7ba7cbbb971fb96e02a4d21d04" prot="public" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>length_framing_source_b_impl</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b_1a2b7256b1b7291554290b091babf54ef2" prot="public" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ab5a7be46e41bb39d5eb2c61d153ccfae" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>n_padding_bytes</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255adff92c6d45779ad8df42fb66198e3185" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>PADDING</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ab240ced8a83ddacfa508103dfcdb4311" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>q_mutex</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1ac823ab2c14b313bf057a243e6ae90719" prot="public" virt="virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>send</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b_1a33f38950b8a906a1bce975393b699d60" prot="public" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a80a8467dbd64c6fcb879f1d5907c6255" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>State</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a811c30bef59fb6fe69d994ca026e1d99" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>state</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a69c2a956c79c2a0972d04f8412a023a1" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>timestamp</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1aa2deaecd0944296e675d237368a303de" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>uptime</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a3254c0afb17354cb3e8dfd2f36fb4275" prot="private" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>WAIT_TIME</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a987428c09beeab249dd98ce245663600" prot="public" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1Interfaces_1_1length__framing__source__b__impl_1a1a983ef8e560c254e1540ca6f95fad71" prot="public" virt="non-virtual"><scope>gr::Interfaces::length_framing_source_b_impl</scope><name>~length_framing_source_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

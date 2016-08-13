@@ -42,7 +42,7 @@ class bench_com_test(gr.top_block):
         # Blocks
         ##################################################
         self.uhd_usrp_source_0 = uhd.usrp_source(
-        	",".join(("addr=192.168.10.3", "addr=192.168.10.3")),
+        	",".join(("addr=192.168.10.3", "addr=192.168.10.2")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
@@ -54,7 +54,7 @@ class bench_com_test(gr.top_block):
         self.uhd_usrp_source_0.set_antenna("RX2", 0)
         self.uhd_usrp_source_0.set_bandwidth(bandwidth, 0)
         self.uhd_usrp_sink_0 = uhd.usrp_sink(
-        	",".join(("addr=192.168.10.2", "addr=192.168.10.2")),
+        	",".join(("addr=192.168.10.2", "addr=192.168.10.3")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),

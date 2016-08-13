@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="length__framing__sink__b__impl_8h" kind="file">
+    <compoundname>length_framing_sink_b_impl.h</compoundname>
+    <includes refid="length__framing__sink__b_8h" local="no">Interfaces/length_framing_sink_b.h</includes>
+    <includes local="no">queue</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">bitset</includes>
+    <includes local="no">fstream</includes>
+    <incdepgraph>
+      <node id="45">
+        <label>Interfaces/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>queue</label>
+      </node>
+      <node id="47">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="49">
+        <label>string</label>
+      </node>
+      <node id="46">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="52">
+        <label>fstream</label>
+      </node>
+      <node id="44">
+        <label>Interfaces/length_framing_sink_b.h</label>
+        <link refid="length__framing__sink__b_8h"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>bitset</label>
+      </node>
+      <node id="50">
+        <label>vector</label>
+      </node>
+      <node id="43">
+        <label>length_framing_sink_b_impl.h</label>
+        <link refid="length_framing_sink_b_impl.h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1Interfaces_1_1length__framing__sink__b__impl" prot="public">gr::Interfaces::length_framing_sink_b_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1Interfaces">gr::Interfaces</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ground/jaidenfe/gr-Interfaces/lib/length_framing_sink_b_impl.h"/>
+  </compounddef>
+</doxygen>

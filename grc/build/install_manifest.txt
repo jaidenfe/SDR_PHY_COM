@@ -1,0 +1,3 @@
+/usr/local/share/gnuradio/grc/blocks/Interfaces_length_framing_source_b.xml
+/usr/local/share/gnuradio/grc/blocks/Interfaces_length_framing_sink_b.xml
+/usr/local/share/gnuradio/grc/blocks/Interfaces_ax25_sink_b.xml

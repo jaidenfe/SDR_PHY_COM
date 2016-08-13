@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classgr_1_1Interfaces_1_1ax25__sink__b__impl" kind="class" prot="public">
+    <compoundname>gr::Interfaces::ax25_sink_b_impl</compoundname>
+    <basecompoundref refid="classgr_1_1Interfaces_1_1ax25__sink__b" prot="public" virt="non-virtual">gr::Interfaces::ax25_sink_b</basecompoundref>
+    <includes refid="ax25__sink__b__impl_8h" local="no">ax25_sink_b_impl.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a7bc77138988f41fef66468698928fedd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::ax25_sink_b_impl::ax25_sink_b_impl</definition>
+        <argsstring>(char *src, char *dst)</argsstring>
+        <name>ax25_sink_b_impl</name>
+        <param>
+          <type>char *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" line="35" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1ad19f1d86d2c556c5663702de82724652" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::Interfaces::ax25_sink_b_impl::~ax25_sink_b_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~ax25_sink_b_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a04fdc4c4af3e08d0fae84e805e7e2d76" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>char *</type>
+        <definition>char* gr::Interfaces::ax25_sink_b_impl::receive</definition>
+        <argsstring>()</argsstring>
+        <name>receive</name>
+        <reimplements refid="classgr_1_1Interfaces_1_1ax25__sink__b_1ac0c945a4ac4ef1ff99727aeec1af98bf">receive</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a663649f9953fdb8a9d2946c8b45e9ad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::Interfaces::ax25_sink_b_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" line="39" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>gr::Interfaces::ax25_sink_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>sync_block</label>
+      </node>
+      <node id="6">
+        <label>gr::Interfaces::ax25_sink_b</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__sink__b"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>gr::Interfaces::ax25_sink_b_impl</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>sync_block</label>
+      </node>
+      <node id="9">
+        <label>gr::Interfaces::ax25_sink_b</label>
+        <link refid="classgr_1_1Interfaces_1_1ax25__sink__b"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" line="30" column="1" bodyfile="/home/ground/jaidenfe/gr-Interfaces/lib/ax25_sink_b_impl.h" bodystart="29" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a7bc77138988f41fef66468698928fedd" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>ax25_sink_b_impl</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b_1ab5b0b8d58a7b81df812de33a0558b839" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a04fdc4c4af3e08d0fae84e805e7e2d76" prot="public" virt="virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>receive</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b_1a349b98e012094128a6aa0aad61032640" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1a663649f9953fdb8a9d2946c8b45e9ad5" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1Interfaces_1_1ax25__sink__b__impl_1ad19f1d86d2c556c5663702de82724652" prot="public" virt="non-virtual"><scope>gr::Interfaces::ax25_sink_b_impl</scope><name>~ax25_sink_b_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -24,13 +24,11 @@ include(GrPlatform) #define LIB_SUFFIX
 
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
-
 list(APPEND Interfaces_sources
     length_framing_source_b_impl.cc
     length_framing_sink_b_impl.cc
-    ax25_source_b_impl.cc
     ax25_sink_b_impl.cc
-)
+    )
 
 set(Interfaces_sources "${Interfaces_sources}" PARENT_SCOPE)
 if(NOT Interfaces_sources)

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_15ed6569ea5834b5f18ad73179dedf2f" kind="dir">
+    <compoundname>Interfaces</compoundname>
+    <innerfile refid="api_8h">api.h</innerfile>
+    <innerfile refid="ax25__sink__b_8h">ax25_sink_b.h</innerfile>
+    <innerfile refid="ax25__source__b_8h">ax25_source_b.h</innerfile>
+    <innerfile refid="length__framing__sink__b_8h">length_framing_sink_b.h</innerfile>
+    <innerfile refid="length__framing__source__b_8h">length_framing_source_b.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ground/jaidenfe/gr-Interfaces/include/Interfaces/"/>
+  </compounddef>
+</doxygen>

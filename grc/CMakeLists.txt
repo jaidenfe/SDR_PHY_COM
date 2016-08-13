@@ -16,10 +16,9 @@
 # along with GNU Radio; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-
 install(FILES
     Interfaces_length_framing_source_b.xml
     Interfaces_length_framing_sink_b.xml
-    Interfaces_ax25_source_b.xml
-    Interfaces_ax25_sink_b.xml DESTINATION share/gnuradio/grc/blocks
+    Interfaces_ax25_sink_b.xml
+    DESTINATION share/gnuradio/grc/blocks
 )

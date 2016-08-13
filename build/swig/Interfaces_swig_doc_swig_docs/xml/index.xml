@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="classgr_1_1Interfaces_1_1ax25__sink__b" kind="class"><name>gr::Interfaces::ax25_sink_b</name>
+    <member refid="classgr_1_1Interfaces_1_1ax25__sink__b_1a349b98e012094128a6aa0aad61032640" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1Interfaces_1_1ax25__sink__b_1ab5b0b8d58a7b81df812de33a0558b839" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1Interfaces_1_1ax25__sink__b_1ac0c945a4ac4ef1ff99727aeec1af98bf" kind="function"><name>receive</name></member>
+  </compound>
+  <compound refid="classgr_1_1Interfaces_1_1ax25__source__b" kind="class"><name>gr::Interfaces::ax25_source_b</name>
+    <member refid="classgr_1_1Interfaces_1_1ax25__source__b_1ab4a95a6de4860c87710954552ba43c8f" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1Interfaces_1_1ax25__source__b_1a37bfd11c671d7167e27b917d261491c6" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1Interfaces_1_1ax25__source__b_1ab7c2192b4361d5c7dc4b75e66562b7cc" kind="function"><name>send</name></member>
+  </compound>
+  <compound refid="classgr_1_1Interfaces_1_1length__framing__sink__b" kind="class"><name>gr::Interfaces::length_framing_sink_b</name>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__sink__b_1a9a3cfe63730882c0d60f2851bb57d1d3" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__sink__b_1a12e63fa88ebf43644cddc3b460412965" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__sink__b_1ae131d725c5e8c3999bb05e1bcfe4e73a" kind="function"><name>receive</name></member>
+  </compound>
+  <compound refid="classgr_1_1Interfaces_1_1length__framing__source__b" kind="class"><name>gr::Interfaces::length_framing_source_b</name>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__source__b_1a33f38950b8a906a1bce975393b699d60" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__source__b_1a2b7256b1b7291554290b091babf54ef2" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1Interfaces_1_1length__framing__source__b_1aa1062b7292cb84c603d27a5febab8bef" kind="function"><name>send</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1Interfaces" kind="namespace"><name>gr::Interfaces</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1a5424e7dcf3948e1875a431101b647fcc" kind="define"><name>INTERFACES_API</name></member>
+  </compound>
+  <compound refid="ax25__sink__b_8h" kind="file"><name>ax25_sink_b.h</name>
+  </compound>
+  <compound refid="ax25__source__b_8h" kind="file"><name>ax25_source_b.h</name>
+  </compound>
+  <compound refid="length__framing__sink__b_8h" kind="file"><name>length_framing_sink_b.h</name>
+  </compound>
+  <compound refid="length__framing__source__b_8h" kind="file"><name>length_framing_source_b.h</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/ground/jaidenfe/gr-Interfaces/include</name>
+  </compound>
+  <compound refid="dir_15ed6569ea5834b5f18ad73179dedf2f" kind="dir"><name>/home/ground/jaidenfe/gr-Interfaces/include/Interfaces</name>
+  </compound>
+</doxygenindex>

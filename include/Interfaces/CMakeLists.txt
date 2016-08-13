@@ -24,6 +24,6 @@ install(FILES
     api.h
     length_framing_source_b.h
     length_framing_sink_b.h
-    ax25_source_b.h
-    ax25_sink_b.h DESTINATION include/Interfaces
+    ax25_sink_b.h
+    DESTINATION include/Interfaces
 )

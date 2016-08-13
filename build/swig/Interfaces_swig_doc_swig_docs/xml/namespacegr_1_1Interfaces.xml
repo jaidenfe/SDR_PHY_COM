@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespacegr_1_1Interfaces" kind="namespace">
+    <compoundname>gr::Interfaces</compoundname>
+    <innerclass refid="classgr_1_1Interfaces_1_1ax25__sink__b" prot="public">gr::Interfaces::ax25_sink_b</innerclass>
+    <innerclass refid="classgr_1_1Interfaces_1_1ax25__source__b" prot="public">gr::Interfaces::ax25_source_b</innerclass>
+    <innerclass refid="classgr_1_1Interfaces_1_1length__framing__sink__b" prot="public">gr::Interfaces::length_framing_sink_b</innerclass>
+    <innerclass refid="classgr_1_1Interfaces_1_1length__framing__source__b" prot="public">gr::Interfaces::length_framing_source_b</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/ground/jaidenfe/gr-Interfaces/include/Interfaces/ax25_sink_b.h" line="29" column="1"/>
+  </compounddef>
+</doxygen>
